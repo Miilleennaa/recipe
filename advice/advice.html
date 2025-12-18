@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кулинарные советы - Подбор рецепта</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../index/index.css">
+<link rel="stylesheet" href="../advice/advice.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<!-- Навигация -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container-fluid nav-container">
+    <a href="../index/index.html" class="logo-wrapper navbar-brand">
+        <img src="../images/logo/logo.png" alt="Логотип" class="logo-icon">
+        <span class="logo-text">Подбор рецепта</span>
+    </a>
+    <div class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</div>
+        <ul class="navbar-nav nav-menu ms-auto">
+            <li class="nav-item"><a href="../index/index.html" class="nav-link">Главная</a></li>
+            <li class="nav-item"><a href="../search/search.html" class="nav-link">Поиск рецептов</a></li>
+            <li class="nav-item"><a href="../catalog/catalog.html" class="nav-link">Каталог рецептов</a></li>
+            <li class="nav-item"><a href="../advice/advice.html" class="nav-link active">Советы</a></li>
+        </ul>
+    </div>
+</div>
+</nav>
+
+<!-- Главный контент -->
+<main class="main-content">
+<!-- Герой секция -->
+<section class="hero advice-hero">
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+<div class="hero-content container text-center">
+    <h1 class="display-4 mb-3">Кулинарные советы и лайфхаки</h1>
+    <p class="lead mb-4">Профессиональные техники, полезные советы и секреты приготовления от шеф-поваров</p>
+    <a href="#tips-section" class="btn btn-success btn-lg cta-button">Исследовать советы</a>
+</div>
+</section>
+
+<!-- Категории советов -->
+<section class="tips-categories">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Категории советов</h2>
+        <div class="row g-4 categories-grid">
+            <div class="col-md col-sm-6">
+                <div class="category-card text-center" data-category="all">
+                    <div class="category-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Все советы</h3>
+                    <p>6 полезных советов</p>
+                </div>
+            </div>
+            <div class="col-md col-sm-6">
+                <div class="category-card text-center" data-category="techniques">
+                    <div class="category-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Техники приготовления</h3>
+                    <p>2 совета</p>
+                </div>
+            </div>
+            <div class="col-md col-sm-6">
+                <div class="category-card text-center" data-category="storage">
+                    <div class="category-icon">
+                        <i class="fas fa-temperature-low"></i>
+                    </div>
+                    <h3>Хранение продуктов</h3>
+                    <p>2 совета</p>
+                </div>
+            </div>
+            <div class="col-md col-sm-6">
+                <div class="category-card text-center" data-category="time-saving">
+                    <div class="category-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Экономия времени</h3>
+                    <p>1 совет</p>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="category-card text-center" data-category="useful-tips">
+                    <div class="category-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Полезные советы</h3>
+                    <p>1 совет</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Сетка советов -->
+<section class="tips-section" id="tips-section">
+<div class="container">
+    <h2 class="section-title text-center mb-5">Самые полезные советы</h2>
+    <div class="row g-4 tips-grid">
+        <!-- Карточка совета 1 -->
+        <div class="col-lg-4 col-md-6">
+            <article class="tip-card" data-category="techniques">
+                <div class="tip-image">
+                    <div class="tip-image-inner" style="background-image: url('../images/tips/карбонара.jpg');"></div>
+                    <div class="tip-badge">Техника</div>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-meta">
+                        <span class="reading-time"><i class="far fa-clock"></i> 3 мин</span>
+                        <span class="difficulty easy"><i class="fas fa-signal"></i> Легко</span>
+                    </div>
+                    <h3>Как правильно варить пасту</h3>
+                    <p>Узнайте секреты приготовления идеальной пасты: от выбора воды до времени варки. Правильное соотношение соли и техника al dente.</p>
+                    <div class="tip-tags">
+                        <span class="badge bg-secondary">#паста</span>
+                        <span class="badge bg-secondary">#варка</span>
+                        <span class="badge bg-secondary">#итальянскаякухня</span>
+                    </div>
+                    <a href="pasta.html" class="read-more mt-3 d-inline-block">Читать подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Карточка совета 2 -->
+        <div class="col-lg-4 col-md-6">
+            <article class="tip-card" data-category="storage">
+                <div class="tip-image">
+                    <div class="tip-image-inner" style="background-image: url('../images/tips/хранение.jpg');"></div>
+                    <div class="tip-badge">Хранение</div>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-meta">
+                        <span class="reading-time"><i class="far fa-clock"></i> 5 мин</span>
+                        <span class="difficulty easy"><i class="fas fa-signal"></i> Легко</span>
+                    </div>
+                    <h3>10 способов хранения зелени</h3>
+                    <p>Простые методы, которые помогут сохранить свежесть зелени на неделю и больше. От петрушки до салата - узнайте лучшие способы.</p>
+                    <div class="tip-tags">
+                        <span class="badge bg-secondary">#зелень</span>
+                        <span class="badge bg-secondary">#хранение</span>
+                        <span class="badge bg-secondary">#свежесть</span>
+                    </div>
+                    <a href="storage.html" class="read-more mt-3 d-inline-block">Читать подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Карточка совета 3 -->
+        <div class="col-lg-4 col-md-6">
+            <article class="tip-card" data-category="techniques">
+                <div class="tip-image">
+                    <div class="tip-image-inner" style="background-image: url('../images/tips/ножи.jpg');"></div>
+                    <div class="tip-badge">Техника</div>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-meta">
+                        <span class="reading-time"><i class="far fa-clock"></i> 7 мин</span>
+                        <span class="difficulty hard"><i class="fas fa-signal"></i> Сложно</span>
+                    </div>
+                    <h3>Как заточить ножи в домашних условиях</h3>
+                    <p>Профессиональные методы заточки кухонных ножей без специального оборудования. Правильный угол и техника для идеальной остроты.</p>
+                    <div class="tip-tags">
+                        <span class="badge bg-secondary">#ножи</span>
+                        <span class="badge bg-secondary">#заточка</span>
+                        <span class="badge bg-secondary">#инструменты</span>
+                    </div>
+                    <a href="knives.html" class="read-more mt-3 d-inline-block">Читать подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Карточка совета 4 -->
+        <div class="col-lg-4 col-md-6">
+            <article class="tip-card" data-category="time-saving">
+                <div class="tip-image">
+                    <div class="tip-image-inner" style="background-image: url('../images/tips/план.jpg');"></div>
+                    <div class="tip-badge">Экономия времени</div>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-meta">
+                        <span class="reading-time"><i class="far fa-clock"></i> 4 мин</span>
+                        <span class="difficulty easy"><i class="fas fa-signal"></i> Легко</span>
+                    </div>
+                    <h3>Приготовление еды на неделю</h3>
+                    <p>Эффективное планирование и приготовление пищи на несколько дней вперед. Сэкономит время и поможет питаться правильно.</p>
+                    <div class="tip-tags">
+                        <span class="badge bg-secondary">#mealprep</span>
+                        <span class="badge bg-secondary">#планирование</span>
+                        <span class="badge bg-secondary">#экономиявремени</span>
+                    </div>
+                    <a href="mealprep.html" class="read-more mt-3 d-inline-block">Читать подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Карточка совета 5 -->
+        <div class="col-lg-4 col-md-6">
+            <article class="tip-card" data-category="useful-tips">
+                <div class="tip-image">
+                    <div class="tip-image-inner" style="background-image: url('../images/tips/мясо.jpg');"></div>
+                    <div class="tip-badge">Полезные советы</div>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-meta">
+                        <span class="reading-time"><i class="far fa-clock"></i> 6 мин</span>
+                        <span class="difficulty medium"><i class="fas fa-signal"></i> Средне</span>
+                    </div>
+                    <h3>Как выбрать идеальный стейк</h3>
+                    <p>Руководство по выбору мяса для стейка: мраморность, толщина, возраст мяса. Секреты идеальной прожарки.</p>
+                    <div class="tip-tags">
+                        <span class="badge bg-secondary">#стейк</span>
+                        <span class="badge bg-secondary">#мясо</span>
+                        <span class="badge bg-secondary">#выборпродуктов</span>
+                    </div>
+                    <a href="steak.html" class="read-more mt-3 d-inline-block">Читать подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+
+        <!-- Карточка совета 6 -->
+        <div class="col-lg-4 col-md-6">
+            <article class="tip-card" data-category="storage">
+                <div class="tip-image">
+                    <div class="tip-image-inner" style="background-image: url('../images/tips/заморозка.jpg');"></div>
+                    <div class="tip-badge">Хранение</div>
+                </div>
+                <div class="tip-content">
+                    <div class="tip-meta">
+                        <span class="reading-time"><i class="far fa-clock"></i> 5 мин</span>
+                        <span class="difficulty easy"><i class="fas fa-signal"></i> Легко</span>
+                    </div>
+                    <h3>Правильная заморозка овощей</h3>
+                    <p>Как правильно замораживать овощи, чтобы сохранить их вкус, текстуру и питательные вещества. Пошаговая инструкция.</p>
+                    <div class="tip-tags">
+                        <span class="badge bg-secondary">#заморозка</span>
+                        <span class="badge bg-secondary">#овощи</span>
+                        <span class="badge bg-secondary">#хранение</span>
+                    </div>
+                    <a href="freezing.html" class="read-more mt-3 d-inline-block">Читать подробнее <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Популярные темы -->
+<section class="popular-topics">
+<div class="container">
+    <h2 class="section-title text-center mb-5">Популярные темы</h2>
+    <div class="d-flex flex-wrap justify-content-center gap-2 topics-list">
+        <a href="#" class="topic-tag">#заморозка продуктов</a>
+        <a href="#" class="topic-tag">#быстрые рецепты</a>
+        <a href="#" class="topic-tag">#здоровое питание</a>
+        <a href="#" class="topic-tag">#кухонная техника</a>
+        <a href="#" class="topic-tag">#сезонные продукты</a>
+        <a href="#" class="topic-tag">#экономия на кухне</a>
+        <a href="#" class="topic-tag">#приправы и специи</a>
+        <a href="#" class="topic-tag">#методы приготовления</a>
+        <a href="#" class="topic-tag">#выбор продуктов</a>
+        <a href="#" class="topic-tag">#организация кухни</a>
+    </div>
+</div>
+</section>
+
+<!-- Подписка на советы -->
+<section class="newsletter-section">
+<div class="container">
+    <div class="newsletter-card">
+        <div class="newsletter-content">
+            <h2 class="mb-3">Получайте свежие советы</h2>
+            <p class="mb-4">Подпишитесь на рассылку и получайте новые кулинарные советы и лайфхаки каждую неделю</p>
+            <form class="newsletter-form row g-3">
+                <div class="col-md-8">
+                    <input type="email" class="form-control" placeholder="Ваш email" required>
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-success w-100">Подписаться</button>
+                </div>
+            </form>
+        </div>
+        <div class="newsletter-icon">
+            <i class="fas fa-envelope-open-text"></i>
+        </div>
+    </div>
+</div>
+</section>
+</main>
+
+<!-- Футер -->
+<footer class="py-4">
+<div class="footer-content container">
+    <ul class="footer-links d-flex flex-wrap justify-content-center list-unstyled mb-3">
+        <li class="mx-3"><a href="../index/index.html" class="text-decoration-none">Главная</a></li>
+        <li class="mx-3"><a href="../search/search.html" class="text-decoration-none">Поиск рецептов</a></li>
+        <li class="mx-3"><a href="../catalog/catalog.html" class="text-decoration-none">Каталог рецептов</a></li>
+        <li class="mx-3"><a href="../advice/advice.html" class="text-decoration-none">Советы</a></li>
+    </ul>
+    <p class="copyright text-center mb-0">© 2025 Подбор рецепта. Все права защищены.</p>
+</div>
+</footer>
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../index/index.js"></script>
+<script src="../advice/advice.js"></script>
+</body>
+</html>

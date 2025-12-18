@@ -1,0 +1,2659 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Поиск рецептов - Подбор рецепта</title>
+<link rel="stylesheet" href="../index/index.css">
+<link rel="stylesheet" href="../advice/advice.css">
+<link rel="stylesheet" href="../search/search.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<!-- Навигация -->
+<nav class="navbar">
+<div class="nav-container">
+    <a href="../index/index.html" class="logo-wrapper">
+        <img src="../images/logo/logo.png" alt="Логотип" class="logo-icon">
+        <span class="logo-text">Подбор рецепта</span>
+    </a>
+    <ul class="nav-menu">
+        <li class="nav-item"><a href="../index/index.html" class="nav-link">Главная</a></li>
+        <li class="nav-item"><a href="../search/search.html" class="nav-link active">Поиск рецептов</a></li>
+        <li class="nav-item"><a href="../catalog/catalog.html" class="nav-link">Каталог рецептов</a></li>
+        <li class="nav-item"><a href="../advice/advice.html" class="nav-link">Советы</a></li>
+    </ul>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+</div>
+</nav>
+
+<!-- Модальные окна для каждого рецепта -->
+
+<!-- Рецепт 1: Спагетти Карбонара -->
+<div class="recipe-modal" id="recipe-modal-1">
+<div class="modal-overlay" id="modal-overlay-1"></div>
+<div class="modal-content">
+    <button class="modal-close" onclick="closeModal(1)">
+        <i class="fas fa-times"></i>
+    </button>
+    
+    <div class="recipe-modal-content">
+        <div class="modal-recipe-image">
+            <div class="recipe-image-inner" style="background-image: url('../images/recipe/спагетти.jpg');"></div>
+        </div>
+        
+        <div class="modal-recipe-details">
+            <div class="modal-recipe-header">
+                <span class="modal-recipe-category">Итальянская</span>
+                <div class="modal-recipe-time">
+                    <i class="far fa-clock"></i>
+                    <span>25 мин</span>
+                </div>
+            </div>
+            
+            <h2 class="modal-recipe-title">Спагетти Карбонара</h2>
+            
+            <div class="modal-recipe-meta">
+                <span class="modal-difficulty easy">
+                    <i class="fas fa-signal"></i> Легко
+                </span>
+                <span class="modal-calories">
+                    <i class="fas fa-fire"></i> 420 ккал
+                </span>
+            </div>
+            
+            <div class="modal-recipe-tags">
+                <span class="tag">#паста</span>
+                <span class="tag">#итальянская</span>
+                <span class="tag">#ужин</span>
+            </div>
+            
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="ingredients-1" onclick="switchTab('ingredients-1')">Ингредиенты</button>
+                <button class="modal-tab" data-tab="steps-1" onclick="switchTab('steps-1')">Рецепт</button>
+                <button class="modal-tab" data-tab="shopping-1" onclick="switchTab('shopping-1')">Список покупок</button>
+            </div>
+            
+            <div class="modal-tab-content active" id="ingredients-1">
+                <div class="ingredients-list">
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Спагетти</span>
+                        <span class="ingredient-amount">300 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Свинина</span>
+                        <span class="ingredient-amount">150 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Яичные желтки</span>
+                        <span class="ingredient-amount">4 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Пармезан</span>
+                        <span class="ingredient-amount">100 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Черный перец</span>
+                        <span class="ingredient-amount">по вкусу</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Соль</span>
+                        <span class="ingredient-amount">1 ст.л.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="steps-1">
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Подготовка ингредиентов</h4>
+                            <p>Нарежьте свинину тонкими ломтиками. Натрите пармезан на мелкой терке.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Приготовление пасты</h4>
+                            <p>Вскипятите воду в большой кастрюле, добавьте соль и варите спагетти аль денте (обычно 8-10 минут).</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Обжарка мяса</h4>
+                            <p>На сухой сковороде обжарьте свинину до золотистого цвета и хрустящей корочки.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Приготовление соуса</h4>
+                            <p>В миске взбейте яичные желтки с большей частью пармезана и щедрой порцией свежемолотого черного перца.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Смешивание</h4>
+                            <p>Слейте пасту, сохранив немного воды. Смешайте горячие спагетти с обжаренной свининой, затем быстро добавьте яичную смесь, интенсивно перемешивая. При необходимости добавьте немного воды от пасты для кремообразной консистенции.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="shopping-1">
+                <div class="shopping-list">
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item1-1">
+                        <label for="item1-1">Спагетти - 300 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item2-1">
+                        <label for="item2-1">Свинина - 150 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item3-1">
+                        <label for="item3-1">Яйца - 4 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item4-1">
+                        <label for="item4-1">Пармезан - 100 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item5-1">
+                        <label for="item5-1">Черный перец</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item6-1">
+                        <label for="item6-1">Соль</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="save-recipe-btn" onclick="saveRecipe(1)">
+                    <i class="far fa-heart"></i>
+                    Сохранить рецепт
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Рецепт 2: Курица в сливочном соусе -->
+<div class="recipe-modal" id="recipe-modal-2">
+<div class="modal-overlay" id="modal-overlay-2"></div>
+<div class="modal-content">
+    <button class="modal-close" onclick="closeModal(2)">
+        <i class="fas fa-times"></i>
+    </button>
+    
+    <div class="recipe-modal-content">
+        <div class="modal-recipe-image">
+            <div class="recipe-image-inner" style="background-image: url('../images/recipe/курица.jpg');"></div>
+        </div>
+        
+        <div class="modal-recipe-details">
+            <div class="modal-recipe-header">
+                <span class="modal-recipe-category">Основное</span>
+                <div class="modal-recipe-time">
+                    <i class="far fa-clock"></i>
+                    <span>45 мин</span>
+                </div>
+            </div>
+            
+            <h2 class="modal-recipe-title">Курица в сливочном соусе</h2>
+            
+            <div class="modal-recipe-meta">
+                <span class="modal-difficulty medium">
+                    <i class="fas fa-signal"></i> Средне
+                </span>
+                <span class="modal-calories">
+                    <i class="fas fa-fire"></i> 320 ккал
+                </span>
+            </div>
+            
+            <div class="modal-recipe-tags">
+                <span class="tag">#курица</span>
+                <span class="tag">#основное</span>
+                <span class="tag">#ужин</span>
+            </div>
+            
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="ingredients-2" onclick="switchTab('ingredients-2')">Ингредиенты</button>
+                <button class="modal-tab" data-tab="steps-2" onclick="switchTab('steps-2')">Рецепт</button>
+                <button class="modal-tab" data-tab="shopping-2" onclick="switchTab('shopping-2')">Список покупок</button>
+            </div>
+            
+            <div class="modal-tab-content active" id="ingredients-2">
+                <div class="ingredients-list">
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Куриное филе</span>
+                        <span class="ingredient-amount">500 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Шампиньоны</span>
+                        <span class="ingredient-amount">300 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Лук репчатый</span>
+                        <span class="ingredient-amount">1 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Сливки 20%</span>
+                        <span class="ingredient-amount">250 мл</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Чеснок</span>
+                        <span class="ingredient-amount">2 зубчика</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Растительное масло</span>
+                        <span class="ingredient-amount">2 ст.л.</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Соль, перец, паприка</span>
+                        <span class="ingredient-amount">по вкусу</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="steps-2">
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Подготовка</h4>
+                            <p>Куриное филе нарежьте кубиками. Лук измельчите, грибы нарежьте пластинками, чеснок пропустите через пресс.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Обжарка курицы</h4>
+                            <p>В сковороде разогрейте масло, обжарьте курицу со всех сторон до золотистой корочки, посолите, поперчите, добавьте паприку. Переложите в тарелку.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Обжарка овощей</h4>
+                            <p>В той же сковороде обжарьте лук до прозрачности, добавьте грибы и готовьте до испарения жидкости. Добавьте чеснок.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Приготовление соуса</h4>
+                            <p>Верните курицу в сковороду, влейте сливки. Доведите до кипения и тушите под крышкой 15 минут на медленном огне.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Подача</h4>
+                            <p>Подавайте с картофельным пюре, рисом или пастой, украсив свежей зеленью.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="shopping-2">
+                <div class="shopping-list">
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item1-2">
+                        <label for="item1-2">Куриное филе - 500 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item2-2">
+                        <label for="item2-2">Шампиньоны - 300 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item3-2">
+                        <label for="item3-2">Лук репчатый - 1 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item4-2">
+                        <label for="item4-2">Сливки 20% - 250 мл</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item5-2">
+                        <label for="item5-2">Чеснок</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item6-2">
+                        <label for="item6-2">Растительное масло</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="save-recipe-btn" onclick="saveRecipe(2)">
+                    <i class="far fa-heart"></i>
+                    Сохранить рецепт
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Рецепт 3: Омлет с овощами -->
+<div class="recipe-modal" id="recipe-modal-3">
+<div class="modal-overlay" id="modal-overlay-3"></div>
+<div class="modal-content">
+    <button class="modal-close" onclick="closeModal(3)">
+        <i class="fas fa-times"></i>
+    </button>
+    
+    <div class="recipe-modal-content">
+        <div class="modal-recipe-image">
+            <div class="recipe-image-inner" style="background-image: url('../images/recipe/омлет.jpg');"></div>
+        </div>
+        
+        <div class="modal-recipe-details">
+            <div class="modal-recipe-header">
+                <span class="modal-recipe-category">Завтрак</span>
+                <div class="modal-recipe-time">
+                    <i class="far fa-clock"></i>
+                    <span>15 мин</span>
+                </div>
+            </div>
+            
+            <h2 class="modal-recipe-title">Омлет с овощами</h2>
+            
+            <div class="modal-recipe-meta">
+                <span class="modal-difficulty easy">
+                    <i class="fas fa-signal"></i> Легко
+                </span>
+                <span class="modal-calories">
+                    <i class="fas fa-fire"></i> 280 ккал
+                </span>
+            </div>
+            
+            <div class="modal-recipe-tags">
+                <span class="tag">#завтрак</span>
+                <span class="tag">#быстро</span>
+                <span class="tag">#омлет</span>
+            </div>
+            
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="ingredients-3" onclick="switchTab('ingredients-3')">Ингредиенты</button>
+                <button class="modal-tab" data-tab="steps-3" onclick="switchTab('steps-3')">Рецепт</button>
+                <button class="modal-tab" data-tab="shopping-3" onclick="switchTab('shopping-3')">Список покупок</button>
+            </div>
+            
+            <div class="modal-tab-content active" id="ingredients-3">
+                <div class="ingredients-list">
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Яйца</span>
+                        <span class="ingredient-amount">4 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Молоко</span>
+                        <span class="ingredient-amount">100 мл</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Помидоры черри</span>
+                        <span class="ingredient-amount">100 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Болгарский перец</span>
+                        <span class="ingredient-amount">1 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Лук зеленый</span>
+                        <span class="ingredient-amount">20 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Соль, перец</span>
+                        <span class="ingredient-amount">по вкусу</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Масло сливочное</span>
+                        <span class="ingredient-amount">20 г</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="steps-3">
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Подготовка овощей</h4>
+                            <p>Помидоры черри разрежьте пополам, болгарский перец нарежьте кубиками, зеленый лук мелко порубите.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Взбивание яиц</h4>
+                            <p>Яйца взбейте с молоком до однородности, добавьте соль и перец по вкусу.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Обжарка овощей</h4>
+                            <p>На сковороде растопите масло, обжарьте болгарский перец 2-3 минуты, добавьте помидоры и готовьте еще 1 минуту.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Приготовление омлета</h4>
+                            <p>Залейте овощи яичной смесью, убавьте огонь до минимума, накройте крышкой и готовьте 5-7 минут до загустения.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Подача</h4>
+                            <p>Посыпьте омлет зеленым луком и подавайте горячим с тостами или свежими овощами.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="shopping-3">
+                <div class="shopping-list">
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item1-3">
+                        <label for="item1-3">Яйца - 4 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item2-3">
+                        <label for="item2-3">Молоко - 100 мл</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item3-3">
+                        <label for="item3-3">Помидоры черри - 100 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item4-3">
+                        <label for="item4-3">Болгарский перец - 1 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item5-3">
+                        <label for="item5-3">Лук зеленый - 20 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item6-3">
+                        <label for="item6-3">Масло сливочное - 20 г</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="save-recipe-btn" onclick="saveRecipe(3)">
+                    <i class="far fa-heart"></i>
+                    Сохранить рецепт
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Рецепт 4: Греческий салат -->
+<div class="recipe-modal" id="recipe-modal-4">
+<div class="modal-overlay" id="modal-overlay-4"></div>
+<div class="modal-content">
+    <button class="modal-close" onclick="closeModal(4)">
+        <i class="fas fa-times"></i>
+    </button>
+    
+    <div class="recipe-modal-content">
+        <div class="modal-recipe-image">
+            <div class="recipe-image-inner" style="background-image: url('../images/recipe/салатгрек.jpg');"></div>
+        </div>
+        
+        <div class="modal-recipe-details">
+            <div class="modal-recipe-header">
+                <span class="modal-recipe-category">Салат</span>
+                <div class="modal-recipe-time">
+                    <i class="far fa-clock"></i>
+                    <span>20 мин</span>
+                </div>
+            </div>
+            
+            <h2 class="modal-recipe-title">Греческий салат</h2>
+            
+            <div class="modal-recipe-meta">
+                <span class="modal-difficulty easy">
+                    <i class="fas fa-signal"></i> Легко
+                </span>
+                <span class="modal-calories">
+                    <i class="fas fa-fire"></i> 180 ккал
+                </span>
+            </div>
+            
+            <div class="modal-recipe-tags">
+                <span class="tag">#салат</span>
+                <span class="tag">#здоровое</span>
+                <span class="tag">#овощи</span>
+            </div>
+            
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="ingredients-4" onclick="switchTab('ingredients-4')">Ингредиенты</button>
+                <button class="modal-tab" data-tab="steps-4" onclick="switchTab('steps-4')">Рецепт</button>
+                <button class="modal-tab" data-tab="shopping-4" onclick="switchTab('shopping-4')">Список покупок</button>
+            </div>
+            
+            <div class="modal-tab-content active" id="ingredients-4">
+                <div class="ingredients-list">
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Помидоры</span>
+                        <span class="ingredient-amount">2 шт (крупные)</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Огурцы</span>
+                        <span class="ingredient-amount">2 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Сыр фета</span>
+                        <span class="ingredient-amount">200 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Красный лук</span>
+                        <span class="ingredient-amount">1 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Маслины без косточек</span>
+                        <span class="ingredient-amount">100 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Сладкий перец</span>
+                        <span class="ingredient-amount">1 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Оливковое масло</span>
+                        <span class="ingredient-amount">4 ст.л.</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Орегано, соль</span>
+                        <span class="ingredient-amount">по вкусу</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="steps-4">
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Нарезка овощей</h4>
+                            <p>Помидоры и огурцы нарежьте крупными кубиками. Красный лук нарежьте тонкими полукольцами. Перец нарежьте соломкой.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Подготовка сыра</h4>
+                            <p>Сыр фета нарежьте кубиками.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Сборка салата</h4>
+                            <p>В большой салатник выложите помидоры, огурцы, лук, перец и маслины. Аккуратно перемешайте.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Добавление сыра</h4>
+                            <p>Сверху выложите кубики феты, посыпьте орегано.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Заправка</h4>
+                            <p>Перед подачей полейте оливковым маслом, посолите по вкусу и аккуратно перемешайте.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="shopping-4">
+                <div class="shopping-list">
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item1-4">
+                        <label for="item1-4">Помидоры - 2 шт (крупные)</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item2-4">
+                        <label for="item2-4">Огурцы - 2 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item3-4">
+                        <label for="item3-4">Сыр фета - 200 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item4-4">
+                        <label for="item4-4">Красный лук - 1 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item5-4">
+                        <label for="item5-4">Маслины без косточек - 100 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item6-4">
+                        <label for="item6-4">Сладкий перец - 1 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item7-4">
+                        <label for="item7-4">Оливковое масло</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="save-recipe-btn" onclick="saveRecipe(4)">
+                    <i class="far fa-heart"></i>
+                    Сохранить рецепт
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Рецепт 5: Шоколадный торт -->
+<div class="recipe-modal" id="recipe-modal-5">
+<div class="modal-overlay" id="modal-overlay-5"></div>
+<div class="modal-content">
+    <button class="modal-close" onclick="closeModal(5)">
+        <i class="fas fa-times"></i>
+    </button>
+    
+    <div class="recipe-modal-content">
+        <div class="modal-recipe-image">
+            <div class="recipe-image-inner" style="background-image: url('../images/recipe/тротшок.jpg');"></div>
+        </div>
+        
+        <div class="modal-recipe-details">
+            <div class="modal-recipe-header">
+                <span class="modal-recipe-category">Десерт</span>
+                <div class="modal-recipe-time">
+                    <i class="far fa-clock"></i>
+                    <span>60 мин</span>
+                </div>
+            </div>
+            
+            <h2 class="modal-recipe-title">Шоколадный торт</h2>
+            
+            <div class="modal-recipe-meta">
+                <span class="modal-difficulty hard">
+                    <i class="fas fa-signal"></i> Сложно
+                </span>
+                <span class="modal-calories">
+                    <i class="fas fa-fire"></i> 480 ккал
+                </span>
+            </div>
+            
+            <div class="modal-recipe-tags">
+                <span class="tag">#десерт</span>
+                <span class="tag">#торт</span>
+                <span class="tag">#шоколад</span>
+            </div>
+            
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="ingredients-5" onclick="switchTab('ingredients-5')">Ингредиенты</button>
+                <button class="modal-tab" data-tab="steps-5" onclick="switchTab('steps-5')">Рецепт</button>
+                <button class="modal-tab" data-tab="shopping-5" onclick="switchTab('shopping-5')">Список покупок</button>
+            </div>
+            
+            <div class="modal-tab-content active" id="ingredients-5">
+                <div class="ingredients-list">
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Мука</span>
+                        <span class="ingredient-amount">200 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Какао-порошок</span>
+                        <span class="ingredient-amount">50 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Сахар</span>
+                        <span class="ingredient-amount">200 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Яйца</span>
+                        <span class="ingredient-amount">3 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Сливочное масло</span>
+                        <span class="ingredient-amount">150 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Разрыхлитель</span>
+                        <span class="ingredient-amount">1 ч.л.</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Молоко</span>
+                        <span class="ingredient-amount">100 мл</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Темный шоколад</span>
+                        <span class="ingredient-amount">200 г (для глазури)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="steps-5">
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Подготовка</h4>
+                            <p>Разогрейте духовку до 180°C. Форму для выпечки смажьте маслом и присыпьте мукой.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Смешивание сухих ингредиентов</h4>
+                            <p>Просейте муку, какао и разрыхлитель в одну миску, перемешайте.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Приготовление теста</h4>
+                            <p>В другой миске взбейте размягченное масло с сахаром до кремообразного состояния. Добавляйте яйца по одному, продолжая взбивать. Чередуя, добавляйте сухую смесь и молоко.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Выпечка</h4>
+                            <p>Вылейте тесто в форму и выпекайте 35-40 минут. Проверьте готовность зубочисткой.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Глазурь</h4>
+                            <p>Растопите шоколад на водяной бане. Полностью остуженный торт полейте глазурью и дайте застыть.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="shopping-5">
+                <div class="shopping-list">
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item1-5">
+                        <label for="item1-5">Мука - 200 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item2-5">
+                        <label for="item2-5">Какао-порошок - 50 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item3-5">
+                        <label for="item3-5">Сахар - 200 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item4-5">
+                        <label for="item4-5">Яйца - 3 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item5-5">
+                        <label for="item5-5">Сливочное масло - 150 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item6-5">
+                        <label for="item6-5">Разрыхлитель</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item7-5">
+                        <label for="item7-5">Молоко - 100 мл</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item8-5">
+                        <label for="item8-5">Темный шоколад - 200 г</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="save-recipe-btn" onclick="saveRecipe(5)">
+                    <i class="far fa-heart"></i>
+                    Сохранить рецепт
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Рецепт 6: Тыквенный суп-пюре -->
+<div class="recipe-modal" id="recipe-modal-6">
+<div class="modal-overlay" id="modal-overlay-6"></div>
+<div class="modal-content">
+    <button class="modal-close" onclick="closeModal(6)">
+        <i class="fas fa-times"></i>
+    </button>
+    
+    <div class="recipe-modal-content">
+        <div class="modal-recipe-image">
+            <div class="recipe-image-inner" style="background-image: url('../images/recipe/суптыква.jpg');"></div>
+        </div>
+        
+        <div class="modal-recipe-details">
+            <div class="modal-recipe-header">
+                <span class="modal-recipe-category">Суп</span>
+                <div class="modal-recipe-time">
+                    <i class="far fa-clock"></i>
+                    <span>40 мин</span>
+                </div>
+            </div>
+            
+            <h2 class="modal-recipe-title">Тыквенный суп-пюре</h2>
+            
+            <div class="modal-recipe-meta">
+                <span class="modal-difficulty medium">
+                    <i class="fas fa-signal"></i> Средне
+                </span>
+                <span class="modal-calories">
+                    <i class="fas fa-fire"></i> 220 ккал
+                </span>
+            </div>
+            
+            <div class="modal-recipe-tags">
+                <span class="tag">#суп</span>
+                <span class="tag">#тыква</span>
+                <span class="tag">#обед</span>
+            </div>
+            
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="ingredients-6" onclick="switchTab('ingredients-6')">Ингредиенты</button>
+                <button class="modal-tab" data-tab="steps-6" onclick="switchTab('steps-6')">Рецепт</button>
+                <button class="modal-tab" data-tab="shopping-6" onclick="switchTab('shopping-6')">Список покупок</button>
+            </div>
+            
+            <div class="modal-tab-content active" id="ingredients-6">
+                <div class="ingredients-list">
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Тыква</span>
+                        <span class="ingredient-amount">800 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Морковь</span>
+                        <span class="ingredient-amount">1 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Лук репчатый</span>
+                        <span class="ingredient-amount">1 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Имбирь свежий</span>
+                        <span class="ingredient-amount">2 см</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Кокосовое молоко</span>
+                        <span class="ingredient-amount">400 мл</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Овощной бульон</span>
+                        <span class="ingredient-amount">500 мл</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Оливковое масло</span>
+                        <span class="ingredient-amount">2 ст.л.</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Соль, перец, мускатный орех</span>
+                        <span class="ingredient-amount">по вкусу</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="steps-6">
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Подготовка овощей</h4>
+                            <p>Тыкву очистите от кожуры и семян, нарежьте кубиками. Морковь и лук нарежьте кубиками, имбирь натрите на мелкой терке.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Обжарка</h4>
+                            <p>В кастрюле разогрейте оливковое масло, обжарьте лук до прозрачности, добавьте морковь и имбирь, готовьте 5 минут.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Тушение</h4>
+                            <p>Добавьте тыкву, залейте овощным бульоном, доведите до кипения и варите 20-25 минут до мягкости тыквы.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Пюрирование</h4>
+                            <p>С помощью блендера превратите суп в однородное пюре. Добавьте кокосовое молоко, прогрейте.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Приправы и подача</h4>
+                            <p>Приправьте солью, перцем и щепоткой мускатного ореха. Подавайте с гренками или тыквенными семечками.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="shopping-6">
+                <div class="shopping-list">
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item1-6">
+                        <label for="item1-6">Тыква - 800 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item2-6">
+                        <label for="item2-6">Морковь - 1 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item3-6">
+                        <label for="item3-6">Лук репчатый - 1 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item4-6">
+                        <label for="item4-6">Имбирь свежий - 2 см</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item5-6">
+                        <label for="item5-6">Кокосовое молоко - 400 мл</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item6-6">
+                        <label for="item6-6">Овощной бульон - 500 мл</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="save-recipe-btn" onclick="saveRecipe(6)">
+                    <i class="far fa-heart"></i>
+                    Сохранить рецепт
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Рецепт 7: Пицца Маргарита -->
+<div class="recipe-modal" id="recipe-modal-7">
+<div class="modal-overlay" id="modal-overlay-7"></div>
+<div class="modal-content">
+    <button class="modal-close" onclick="closeModal(7)">
+        <i class="fas fa-times"></i>
+    </button>
+    
+    <div class="recipe-modal-content">
+        <div class="modal-recipe-image">
+            <div class="recipe-image-inner" style="background-image: url('../images/recipe/пиццамаргарита.jpg');"></div>
+        </div>
+        
+        <div class="modal-recipe-details">
+            <div class="modal-recipe-header">
+                <span class="modal-recipe-category">Итальянская</span>
+                <div class="modal-recipe-time">
+                    <i class="far fa-clock"></i>
+                    <span>20 мин</span>
+                </div>
+            </div>
+            
+            <h2 class="modal-recipe-title">Пицца Маргарита</h2>
+            
+            <div class="modal-recipe-meta">
+                <span class="modal-difficulty easy">
+                    <i class="fas fa-signal"></i> Легко
+                </span>
+                <span class="modal-calories">
+                    <i class="fas fa-fire"></i> 380 ккал
+                </span>
+            </div>
+            
+            <div class="modal-recipe-tags">
+                <span class="tag">#пицца</span>
+                <span class="tag">#итальянская</span>
+                <span class="tag">#ужин</span>
+            </div>
+            
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="ingredients-7" onclick="switchTab('ingredients-7')">Ингредиенты</button>
+                <button class="modal-tab" data-tab="steps-7" onclick="switchTab('steps-7')">Рецепт</button>
+                <button class="modal-tab" data-tab="shopping-7" onclick="switchTab('shopping-7')">Список покупок</button>
+            </div>
+            
+            <div class="modal-tab-content active" id="ingredients-7">
+                <div class="ingredients-list">
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Тесто для пиццы</span>
+                        <span class="ingredient-amount">300 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Помидоры в собственном соку</span>
+                        <span class="ingredient-amount">400 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Моцарелла</span>
+                        <span class="ingredient-amount">200 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Свежий базилик</span>
+                        <span class="ingredient-amount">20 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Оливковое масло</span>
+                        <span class="ingredient-amount">2 ст.л.</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Соль, перец, орегано</span>
+                        <span class="ingredient-amount">по вкусу</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="steps-7">
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Подготовка теста</h4>
+                            <p>Раскатайте тесто в круг диаметром 30 см. Переложите на противень, застеленный пергаментом.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Соус</h4>
+                            <p>Помидоры измельчите в блендере, добавьте оливковое масло, соль, перец и орегано.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Начинка</h4>
+                            <p>Равномерно распределите соус по тесту, оставив 1 см по краям. Моцареллу нарежьте тонкими ломтиками и выложите на соус.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Выпечка</h4>
+                            <p>Выпекайте в разогретой до 250°C духовке 10-12 минут до золотистой корочки по краям.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Подача</h4>
+                            <p>Достаньте пиццу, украсьте свежими листьями базилика, сбрызните оливковым маслом.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="shopping-7">
+                <div class="shopping-list">
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item1-7">
+                        <label for="item1-7">Тесто для пиццы - 300 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item2-7">
+                        <label for="item2-7">Помидоры в собственном соку - 400 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item3-7">
+                        <label for="item3-7">Моцарелла - 200 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item4-7">
+                        <label for="item4-7">Свежий базилик - 20 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item5-7">
+                        <label for="item5-7">Оливковое масло</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="save-recipe-btn" onclick="saveRecipe(7)">
+                    <i class="far fa-heart"></i>
+                    Сохранить рецепт
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Рецепт 8: Блины с ягодами -->
+<div class="recipe-modal" id="recipe-modal-8">
+<div class="modal-overlay" id="modal-overlay-8"></div>
+<div class="modal-content">
+    <button class="modal-close" onclick="closeModal(8)">
+        <i class="fas fa-times"></i>
+    </button>
+    
+    <div class="recipe-modal-content">
+        <div class="modal-recipe-image">
+            <div class="recipe-image-inner" style="background-image: url('../images/recipe/блиныягоды.jpg');"></div>
+        </div>
+        
+        <div class="modal-recipe-details">
+            <div class="modal-recipe-header">
+                <span class="modal-recipe-category">Завтрак</span>
+                <div class="modal-recipe-time">
+                    <i class="far fa-clock"></i>
+                    <span>10 мин</span>
+                </div>
+            </div>
+            
+            <h2 class="modal-recipe-title">Блины с ягодами</h2>
+            
+            <div class="modal-recipe-meta">
+                <span class="modal-difficulty easy">
+                    <i class="fas fa-signal"></i> Легко
+                </span>
+                <span class="modal-calories">
+                    <i class="fas fa-fire"></i> 250 ккал
+                </span>
+            </div>
+            
+            <div class="modal-recipe-tags">
+                <span class="tag">#блины</span>
+                <span class="tag">#завтрак</span>
+                <span class="tag">#сладкое</span>
+            </div>
+            
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="ingredients-8" onclick="switchTab('ingredients-8')">Ингредиенты</button>
+                <button class="modal-tab" data-tab="steps-8" onclick="switchTab('steps-8')">Рецепт</button>
+                <button class="modal-tab" data-tab="shopping-8" onclick="switchTab('shopping-8')">Список покупок</button>
+            </div>
+            
+            <div class="modal-tab-content active" id="ingredients-8">
+                <div class="ingredients-list">
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Мука</span>
+                        <span class="ingredient-amount">200 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Яйца</span>
+                        <span class="ingredient-amount">2 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Молоко</span>
+                        <span class="ingredient-amount">400 мл</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Сахар</span>
+                        <span class="ingredient-amount">2 ст.л.</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Соль</span>
+                        <span class="ingredient-amount">щепотка</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Растительное масло</span>
+                        <span class="ingredient-amount">2 ст.л.</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Смесь ягод (свежих или замороженных)</span>
+                        <span class="ingredient-amount">300 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Кленовый сироп или мед</span>
+                        <span class="ingredient-amount">для подачи</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="steps-8">
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Приготовление теста</h4>
+                            <p>В миске смешайте яйца, сахар и соль. Постепенно добавьте молоко, затем просейте муку и перемешайте до однородности. Добавьте растительное масло.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Отдых теста</h4>
+                            <p>Дайте тесту постоять 15-20 минут при комнатной температуре.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Жарка блинов</h4>
+                            <p>Разогрейте сковороду, смажьте ее небольшим количеством масла. Наливайте тесто половником, распределяя по сковороде тонким слоем. Жарьте с обеих сторон до золотистого цвета.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Подготовка ягод</h4>
+                            <p>Если ягоды замороженные, разморозьте их. Свежие ягоды промойте и обсушите.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Подача</h4>
+                            <p>Выложите блины на тарелку, добавьте ягоды и полейте кленовым сиропом или медом.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="shopping-8">
+                <div class="shopping-list">
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item1-8">
+                        <label for="item1-8">Мука - 200 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item2-8">
+                        <label for="item2-8">Яйца - 2 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item3-8">
+                        <label for="item3-8">Молоко - 400 мл</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item4-8">
+                        <label for="item4-8">Сахар - 2 ст.л.</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item5-8">
+                        <label for="item5-8">Растительное масло</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item6-8">
+                        <label for="item6-8">Смесь ягод - 300 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item7-8">
+                        <label for="item7-8">Кленовый сироп или мед</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="save-recipe-btn" onclick="saveRecipe(8)">
+                    <i class="far fa-heart"></i>
+                    Сохранить рецепт
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Рецепт 9: Вегетарианская лазанья -->
+<div class="recipe-modal" id="recipe-modal-9">
+<div class="modal-overlay" id="modal-overlay-9"></div>
+<div class="modal-content">
+    <button class="modal-close" onclick="closeModal(9)">
+        <i class="fas fa-times"></i>
+    </button>
+    
+    <div class="recipe-modal-content">
+        <div class="modal-recipe-image">
+            <div class="recipe-image-inner" style="background-image: url('../images/recipe/лазаньявеган.jpg');"></div>
+        </div>
+        
+        <div class="modal-recipe-details">
+            <div class="modal-recipe-header">
+                <span class="modal-recipe-category">Вегетарианское</span>
+                <div class="modal-recipe-time">
+                    <i class="far fa-clock"></i>
+                    <span>35 мин</span>
+                </div>
+            </div>
+            
+            <h2 class="modal-recipe-title">Вегетарианская лазанья</h2>
+            
+            <div class="modal-recipe-meta">
+                <span class="modal-difficulty medium">
+                    <i class="fas fa-signal"></i> Средне
+                </span>
+                <span class="modal-calories">
+                    <i class="fas fa-fire"></i> 320 ккал
+                </span>
+            </div>
+            
+            <div class="modal-recipe-tags">
+                <span class="tag">#вегетарианское</span>
+                <span class="tag">#итальянская</span>
+                <span class="tag">#основное</span>
+            </div>
+            
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="ingredients-9" onclick="switchTab('ingredients-9')">Ингредиенты</button>
+                <button class="modal-tab" data-tab="steps-9" onclick="switchTab('steps-9')">Рецепт</button>
+                <button class="modal-tab" data-tab="shopping-9" onclick="switchTab('shopping-9')">Список покупок</button>
+            </div>
+            
+            <div class="modal-tab-content active" id="ingredients-9">
+                <div class="ingredients-list">
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Листы для лазаньи</span>
+                        <span class="ingredient-amount">9-12 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Шпинат свежий</span>
+                        <span class="ingredient-amount">300 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Грибы шампиньоны</span>
+                        <span class="ingredient-amount">300 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Томатный соус</span>
+                        <span class="ingredient-amount">500 мл</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Сыр моцарелла</span>
+                        <span class="ingredient-amount">200 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Сыр пармезан</span>
+                        <span class="ingredient-amount">100 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Творог или рикотта</span>
+                        <span class="ingredient-amount">250 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Лук репчатый</span>
+                        <span class="ingredient-amount">1 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Чеснок</span>
+                        <span class="ingredient-amount">2 зубчика</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="steps-9">
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Подготовка овощей</h4>
+                            <p>Лук и чеснок мелко нарежьте, грибы нарежьте пластинками, шпинат промойте и обсушите.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Обжарка</h4>
+                            <p>На сковороде обжарьте лук до прозрачности, добавьте грибы и готовьте до испарения жидкости. Добавьте шпинат и чеснок, готовьте 2-3 минуты.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Сборка лазаньи</h4>
+                            <p>В форму для запекания выложите немного томатного соуса. Сверху положите листы лазаньи, затем слой овощной смеси, творог и немного соуса. Повторите слои.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Сырный слой</h4>
+                            <p>Последний слой залейте оставшимся соусом, посыпьте тертой моцареллой и пармезаном.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Запекание</h4>
+                            <p>Накройте фольгой и запекайте 25 минут при 180°C, затем снимите фольгу и запекайте еще 10 минут до золотистой корочки.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="shopping-9">
+                <div class="shopping-list">
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item1-9">
+                        <label for="item1-9">Листы для лазаньи - 9-12 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item2-9">
+                        <label for="item2-9">Шпинат свежий - 300 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item3-9">
+                        <label for="item3-9">Грибы шампиньоны - 300 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item4-9">
+                        <label for="item4-9">Томатный соус - 500 мл</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item5-9">
+                        <label for="item5-9">Сыр моцарелла - 200 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item6-9">
+                        <label for="item6-9">Сыр пармезан - 100 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item7-9">
+                        <label for="item7-9">Творог или рикотта - 250 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item8-9">
+                        <label for="item8-9">Лук репчатый - 1 шт</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="save-recipe-btn" onclick="saveRecipe(9)">
+                    <i class="far fa-heart"></i>
+                    Сохранить рецепт
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Рецепт 10: Киноа с овощами -->
+<div class="recipe-modal" id="recipe-modal-10">
+<div class="modal-overlay" id="modal-overlay-10"></div>
+<div class="modal-content">
+    <button class="modal-close" onclick="closeModal(10)">
+        <i class="fas fa-times"></i>
+    </button>
+    
+    <div class="recipe-modal-content">
+        <div class="modal-recipe-image">
+            <div class="recipe-image-inner" style="background-image: url('../images/recipe/киноа.jpg');"></div>
+        </div>
+        
+        <div class="modal-recipe-details">
+            <div class="modal-recipe-header">
+                <span class="modal-recipe-category">Здоровое</span>
+                <div class="modal-recipe-time">
+                    <i class="far fa-clock"></i>
+                    <span>25 мин</span>
+                </div>
+            </div>
+            
+            <h2 class="modal-recipe-title">Киноа с овощами</h2>
+            
+            <div class="modal-recipe-meta">
+                <span class="modal-difficulty easy">
+                    <i class="fas fa-signal"></i> Легко
+                </span>
+                <span class="modal-calories">
+                    <i class="fas fa-fire"></i> 190 ккал
+                </span>
+            </div>
+            
+            <div class="modal-recipe-tags">
+                <span class="tag">#киноа</span>
+                <span class="tag">#здоровое</span>
+                <span class="tag">#вегетарианское</span>
+            </div>
+            
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="ingredients-10" onclick="switchTab('ingredients-10')">Ингредиенты</button>
+                <button class="modal-tab" data-tab="steps-10" onclick="switchTab('steps-10')">Рецепт</button>
+                <button class="modal-tab" data-tab="shopping-10" onclick="switchTab('shopping-10')">Список покупок</button>
+            </div>
+            
+            <div class="modal-tab-content active" id="ingredients-10">
+                <div class="ingredients-list">
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Киноа</span>
+                        <span class="ingredient-amount">200 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Болгарский перец</span>
+                        <span class="ingredient-amount">1 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Цуккини</span>
+                        <span class="ingredient-amount">1 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Лук репчатый</span>
+                        <span class="ingredient-amount">1 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Чеснок</span>
+                        <span class="ingredient-amount">2 зубчика</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Оливковое масло</span>
+                        <span class="ingredient-amount">2 ст.л.</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Лимонный сок</span>
+                        <span class="ingredient-amount">1 ст.л.</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Свежая зелень (петрушка, кинза)</span>
+                        <span class="ingredient-amount">20 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Соль, перец, кумин</span>
+                        <span class="ingredient-amount">по вкусу</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="steps-10">
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Приготовление киноа</h4>
+                            <p>Промойте киноа под холодной водой. Залейте водой в пропорции 1:2, доведите до кипения, убавьте огонь и варите 15 минут под крышкой. Снимите с огня и дайте постоять 5 минут.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Подготовка овощей</h4>
+                            <p>Перец и цуккини нарежьте кубиками, лук измельчите, чеснок пропустите через пресс.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Обжарка овощей</h4>
+                            <p>В сковороде разогрейте оливковое масло, обжарьте лук до прозрачности, добавьте перец и цуккини, готовьте 5-7 минут. В конце добавьте чеснок и специи.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Смешивание</h4>
+                            <p>В большую миску выложите готовую киноа, добавьте обжаренные овощи, лимонный сок и мелко нарезанную зелень.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Подача</h4>
+                            <p>Тщательно перемешайте, попробуйте и при необходимости добавьте соль и перец. Подавайте теплым или холодным.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="shopping-10">
+                <div class="shopping-list">
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item1-10">
+                        <label for="item1-10">Киноа - 200 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item2-10">
+                        <label for="item2-10">Болгарский перец - 1 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item3-10">
+                        <label for="item3-10">Цуккини - 1 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item4-10">
+                        <label for="item4-10">Лук репчатый - 1 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item5-10">
+                        <label for="item5-10">Чеснок</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item6-10">
+                        <label for="item6-10">Оливковое масло</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item7-10">
+                        <label for="item7-10">Лимон</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item8-10">
+                        <label for="item8-10">Свежая зелень (петрушка, кинза)</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="save-recipe-btn" onclick="saveRecipe(10)">
+                    <i class="far fa-heart"></i>
+                    Сохранить рецепт
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Рецепт 11: Жареный рис с курицей -->
+<div class="recipe-modal" id="recipe-modal-11">
+<div class="modal-overlay" id="modal-overlay-11"></div>
+<div class="modal-content">
+    <button class="modal-close" onclick="closeModal(11)">
+        <i class="fas fa-times"></i>
+    </button>
+    
+    <div class="recipe-modal-content">
+        <div class="modal-recipe-image">
+            <div class="recipe-image-inner" style="background-image: url('../images/recipe/рискурица.jpg');"></div>
+        </div>
+        
+        <div class="modal-recipe-details">
+            <div class="modal-recipe-header">
+                <span class="modal-recipe-category">Азиатская</span>
+                <div class="modal-recipe-time">
+                    <i class="far fa-clock"></i>
+                    <span>30 мин</span>
+                </div>
+            </div>
+            
+            <h2 class="modal-recipe-title">Жареный рис с курицей</h2>
+            
+            <div class="modal-recipe-meta">
+                <span class="modal-difficulty medium">
+                    <i class="fas fa-signal"></i> Средне
+                </span>
+                <span class="modal-calories">
+                    <i class="fas fa-fire"></i> 350 ккал
+                </span>
+            </div>
+            
+            <div class="modal-recipe-tags">
+                <span class="tag">#азиатская</span>
+                <span class="tag">#рис</span>
+                <span class="tag">#курица</span>
+            </div>
+            
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="ingredients-11" onclick="switchTab('ingredients-11')">Ингредиенты</button>
+                <button class="modal-tab" data-tab="steps-11" onclick="switchTab('steps-11')">Рецепт</button>
+                <button class="modal-tab" data-tab="shopping-11" onclick="switchTab('shopping-11')">Список покупок</button>
+            </div>
+            
+            <div class="modal-tab-content active" id="ingredients-11">
+                <div class="ingredients-list">
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Рис</span>
+                        <span class="ingredient-amount">300 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Куриное филе</span>
+                        <span class="ingredient-amount">300 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Яйца</span>
+                        <span class="ingredient-amount">2 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Морковь</span>
+                        <span class="ingredient-amount">1 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Зеленый горошек</span>
+                        <span class="ingredient-amount">100 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Зеленый лук</span>
+                        <span class="ingredient-amount">3 стебля</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Чеснок</span>
+                        <span class="ingredient-amount">3 зубчика</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Соевый соус</span>
+                        <span class="ingredient-amount">3 ст.л.</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Кунжутное масло</span>
+                        <span class="ingredient-amount">1 ст.л.</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Растительное масло</span>
+                        <span class="ingredient-amount">2 ст.л.</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="steps-11">
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Подготовка ингредиентов</h4>
+                            <p>Куриное филе нарежьте мелкими кубиками. Морковь натрите на крупной терке. Чеснок измельчите, зеленый лук нарежьте.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Обжарка курицы</h4>
+                            <p>В воке или глубокой сковороде разогрейте растительное масло. Обжарьте курицу до готовности, переложите в тарелку.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Овощи и яйца</h4>
+                            <p>В той же сковороде обжарьте яйца, помешивая, чтобы получились мелкие хлопья. Добавьте морковь, горошек и чеснок, готовьте 3 минуты.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Добавление риса</h4>
+                            <p>Добавьте рис и курицу. Влейте соевый соус и кунжутное масло, тщательно перемешайте и готовьте 5 минут.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Подача</h4>
+                            <p>Перед подачей посыпьте зеленым луком. Подавайте горячим.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="shopping-11">
+                <div class="shopping-list">
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item1-11">
+                        <label for="item1-11">Рис - 300 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item2-11">
+                        <label for="item2-11">Куриное филе - 300 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item3-11">
+                        <label for="item3-11">Яйца - 2 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item4-11">
+                        <label for="item4-11">Морковь - 1 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item5-11">
+                        <label for="item5-11">Зеленый горошек - 100 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item6-11">
+                        <label for="item6-11">Зеленый лук - 3 стебля</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item7-11">
+                        <label for="item7-11">Чеснок</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item8-11">
+                        <label for="item8-11">Соевый соус</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item9-11">
+                        <label for="item9-11">Кунжутное масло</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="save-recipe-btn" onclick="saveRecipe(11)">
+                    <i class="far fa-heart"></i>
+                    Сохранить рецепт
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Рецепт 12: Лосось на гриле -->
+<div class="recipe-modal" id="recipe-modal-12">
+<div class="modal-overlay" id="modal-overlay-12"></div>
+<div class="modal-content">
+    <button class="modal-close" onclick="closeModal(12)">
+        <i class="fas fa-times"></i>
+    </button>
+    
+    <div class="recipe-modal-content">
+        <div class="modal-recipe-image">
+            <div class="recipe-image-inner" style="background-image: url('../images/recipe/лососьгриль.jpg');"></div>
+        </div>
+        
+        <div class="modal-recipe-details">
+            <div class="modal-recipe-header">
+                <span class="modal-recipe-category">Диетическое</span>
+                <div class="modal-recipe-time">
+                    <i class="far fa-clock"></i>
+                    <span>40 мин</span>
+                </div>
+            </div>
+            
+            <h2 class="modal-recipe-title">Лосось на гриле</h2>
+            
+            <div class="modal-recipe-meta">
+                <span class="modal-difficulty easy">
+                    <i class="fas fa-signal"></i> Легко
+                </span>
+                <span class="modal-calories">
+                    <i class="fas fa-fire"></i> 280 ккал
+                </span>
+            </div>
+            
+            <div class="modal-recipe-tags">
+                <span class="tag">#лосось</span>
+                <span class="tag">#здоровое</span>
+                <span class="tag">#гриль</span>
+            </div>
+            
+            <div class="modal-tabs">
+                <button class="modal-tab active" data-tab="ingredients-12" onclick="switchTab('ingredients-12')">Ингредиенты</button>
+                <button class="modal-tab" data-tab="steps-12" onclick="switchTab('steps-12')">Рецепт</button>
+                <button class="modal-tab" data-tab="shopping-12" onclick="switchTab('shopping-12')">Список покупок</button>
+            </div>
+            
+            <div class="modal-tab-content active" id="ingredients-12">
+                <div class="ingredients-list">
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Филе лосося</span>
+                        <span class="ingredient-amount">4 шт (по 180-200 г)</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Лимон</span>
+                        <span class="ingredient-amount">1 шт</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Оливковое масло</span>
+                        <span class="ingredient-amount">3 ст.л.</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Чеснок</span>
+                        <span class="ingredient-amount">2 зубчика</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Свежий укроп</span>
+                        <span class="ingredient-amount">20 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Смесь овощей для гриля</span>
+                        <span class="ingredient-amount">500 г</span>
+                    </div>
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">Соль, перец</span>
+                        <span class="ingredient-amount">по вкусу</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="steps-12">
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Маринад</h4>
+                            <p>В миске смешайте оливковое масло, сок половины лимона, измельченный чеснок, мелко нарезанный укроп, соль и перец.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Маринование лосося</h4>
+                            <p>Филе лосося промокните бумажным полотенцем. Положите в маринад и оставьте на 20-30 минут.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Подготовка овощей</h4>
+                            <p>Овощи нарежьте крупными кусками, сбрызните оливковым маслом, посолите и поперчите.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Приготовление на гриле</h4>
+                            <p>Разогрейте гриль. Выложите лосось кожей вниз и готовьте 4-5 минут с каждой стороны. Овощи готовьте 8-10 минут, периодически переворачивая.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Подача</h4>
+                            <p>Подавайте лосось с овощами-гриль, украсьте дольками лимона и веточками свежего укропа.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-tab-content" id="shopping-12">
+                <div class="shopping-list">
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item1-12">
+                        <label for="item1-12">Филе лосося - 4 шт (по 180-200 г)</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item2-12">
+                        <label for="item2-12">Лимон - 1 шт</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item3-12">
+                        <label for="item3-12">Оливковое масло</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item4-12">
+                        <label for="item4-12">Чеснок</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item5-12">
+                        <label for="item5-12">Свежий укроп - 20 г</label>
+                    </div>
+                    <div class="shopping-item">
+                        <input type="checkbox" id="item6-12">
+                        <label for="item6-12">Овощи для гриля - 500 г</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="save-recipe-btn" onclick="saveRecipe(12)">
+                    <i class="far fa-heart"></i>
+                    Сохранить рецепт
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<main class="search-page">
+<!-- Герой секция -->
+<section class="search-hero">
+    <div class="search-hero-bg"></div>
+    <div class="search-hero-overlay"></div>
+    <div class="search-hero-content">
+        <h1>Умный поиск рецептов</h1>
+        <p>Найдите идеальное блюдо по вашим параметрам: имеющимся продуктам, времени приготовления и предпочтениям</p>
+    </div>
+</section>
+
+<!-- Основная форма поиска -->
+<section class="search-main-section">
+    <div class="container">
+        <div class="search-card">
+            <div class="search-tabs">
+                <button class="search-tab active" data-tab="basic">Быстрый поиск</button>
+                <button class="search-tab" data-tab="advanced">Расширенный поиск</button>
+                <button class="search-tab" data-tab="ingredients">По продуктам</button>
+            </div>
+
+            <div class="search-tab-content active" id="basic-tab">
+                <form class="search-form" id="basic-search-form">
+                    <div class="search-input-group">
+                        <div class="input-with-icon">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Название блюда или ингредиент" class="search-input" id="basic-query">
+                        </div>
+                    </div>
+                    
+                    <div class="filter-row">
+                        <div class="filter-group">
+                            <label for="cooking-time"><i class="fas fa-clock"></i> Время приготовления</label>
+                            <select id="cooking-time" class="filter-select">
+    <option value="">Любое время</option>
+    <option value="10">До 10 минут</option>
+    <option value="15">До 15 минут</option>
+    <option value="20">До 20 минут</option>
+    <option value="25">До 25 минут</option>
+    <option value="30">До 30 минут</option>
+    <option value="35">До 35 минут</option>
+    <option value="40">До 40 минут</option>
+    <option value="45">До 45 минут</option>
+    <option value="60">До 1 часа</option>
+    <option value="120">До 2 часов</option>
+</select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="dish-type"><i class="fas fa-utensils"></i> Тип блюда</label>
+                            <select id="dish-type" class="filter-select">
+                                <option value="">Все типы</option>
+                                <option value="breakfast">Завтрак</option>
+                                <option value="lunch">Обед</option>
+                                <option value="dinner">Ужин</option>
+                                <option value="dessert">Десерт</option>
+                                <option value="snack">Закуска</option>
+                                <option value="salad">Салат</option>
+                                <option value="soup">Суп</option>
+                                <option value="main">Основное блюдо</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="difficulty"><i class="fas fa-signal"></i> Сложность</label>
+                            <select id="difficulty" class="filter-select">
+                                <option value="">Любая сложность</option>
+                                <option value="easy">Легкая</option>
+                                <option value="medium">Средняя</option>
+                                <option value="hard">Сложная</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="search-submit-btn">
+                        <i class="fas fa-search"></i>
+                        Найти рецепты
+                    </button>
+                </form>
+            </div>
+
+            <div class="search-tab-content" id="advanced-tab">
+                <form class="search-form" id="advanced-search-form">
+                    <div class="advanced-filters">
+                        <div class="filter-section">
+                            <h3><i class="fas fa-utensil-spoon"></i> Основные параметры</h3>
+                            <div class="filter-grid">
+                                <div class="filter-group">
+                                    <label for="cuisine"><i class="fas fa-globe"></i> Кухня</label>
+                                    <select id="cuisine" class="filter-select">
+                                        <option value="">Любая кухня</option>
+                                        <option value="russian">Русская</option>
+                                        <option value="italian">Итальянская</option>
+                                        <option value="french">Французская</option>
+                                        <option value="asian">Азиатская</option>
+                                        <option value="mexican">Мексиканская</option>
+                                        <option value="american">Американская</option>
+                                        <option value="mediterranean">Средиземноморская</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="filter-group">
+                                    <label for="diet"><i class="fas fa-seedling"></i> Диета</label>
+                                    <select id="diet" class="filter-select">
+                                        <option value="">Любая диета</option>
+                                        <option value="vegetarian">Вегетарианская</option>
+                                        <option value="vegan">Веганская</option>
+                                        <option value="gluten-free">Безглютеновая</option>
+                                        <option value="low-carb">Низкоуглеводная</option>
+                                        <option value="keto">Кето</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="filter-group">
+                                    <label for="calories"><i class="fas fa-fire"></i> Калории (макс.)</label>
+                                    <input type="range" id="calories" min="100" max="1000" step="50" value="500" class="range-slider">
+                                    <div class="range-value" id="calories-value">500 ккал</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-section">
+                            <h3><i class="fas fa-tools"></i> Способ приготовления</h3>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="method-oven" name="cooking-method">
+                                    <label for="method-oven"><i class="fas fa-temperature-high"></i> Духовка</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="method-stove" name="cooking-method">
+                                    <label for="method-stove"><i class="fas fa-fire"></i> Плита</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="method-grill" name="cooking-method">
+                                    <label for="method-grill"><i class="fas fa-grill"></i> Гриль</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="method-slowcooker" name="cooking-method">
+                                    <label for="method-slowcooker"><i class="fas fa-clock"></i> Мультиварка</label>
+                                </div>
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="method-microwave" name="cooking-method">
+                                    <label for="method-microwave"><i class="fas fa-bolt"></i> Микроволновка</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="search-submit-btn">
+                        <i class="fas fa-filter"></i>
+                        Применить фильтры
+                    </button>
+                </form>
+            </div>
+
+            <div class="search-tab-content" id="ingredients-tab">
+                <form class="search-form" id="ingredients-search-form">
+                    <div class="ingredients-section">
+                        <h3><i class="fas fa-carrot"></i> Укажите имеющиеся продукты</h3>
+                        <p class="section-description">Добавьте продукты, которые есть у вас дома, и мы подберем рецепты, которые можно из них приготовить</p>
+                        
+                        <div class="ingredients-input-container">
+                            <div class="input-with-icon">
+                                <i class="fas fa-plus"></i>
+                                <input type="text" placeholder="Начните вводить название продукта..." id="ingredient-input" class="ingredient-input">
+                            </div>
+                            <button type="button" class="add-ingredient-btn" id="add-ingredient-btn">
+                                <i class="fas fa-plus-circle"></i>
+                                Добавить
+                            </button>
+                        </div>
+                        
+                        <div class="selected-ingredients" id="selected-ingredients">
+                            <!-- Здесь будут добавляться выбранные ингредиенты -->
+                        </div>
+                        
+                        <div class="quick-ingredients">
+                            <h4>Популярные продукты:</h4>
+                            <div class="quick-tags">
+                                <button type="button" class="quick-tag" data-ingredient="яйца">Яйца</button>
+                                <button type="button" class="quick-tag" data-ingredient="лук">Лук</button>
+                                <button type="button" class="quick-tag" data-ingredient="помидоры">Помидоры</button>
+                                <button type="button" class="quick-tag" data-ingredient="мука">Мука</button>
+                                <button type="button" class="quick-tag" data-ingredient="сыр">Сыр</button>
+                                <button type="button" class="quick-tag" data-ingredient="молоко">Молоко</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="filter-group">
+                            <label for="ingredient-time"><i class="fas fa-clock"></i> Время приготовления</label>
+                            <select id="ingredient-time" class="filter-select">
+                                <option value="">Любое время</option>
+                                <option value="30">До 30 минут</option>
+                                <option value="60">До 1 часа</option>
+                                <option value="120">До 2 часов</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="ingredient-type"><i class="fas fa-utensils"></i> Тип блюда</label>
+                            <select id="ingredient-type" class="filter-select">
+                                <option value="">Все типы</option>
+                                <option value="main">Основное блюдо</option>
+                                <option value="soup">Суп</option>
+                                <option value="salad">Салат</option>
+                                <option value="breakfast">Завтрак</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="search-submit-btn">
+                        <i class="fas fa-magic"></i>
+                        Найти рецепты по продуктам
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Быстрые фильтры -->
+        <div class="quick-filters-section">
+            <h2 class="section-title">Популярные категории</h2>
+            <div class="quick-filters-section">
+    <div class="quick-filters">
+        <div class="quick-filter-item" data-filter="quick">
+            <div class="filter-icon">
+                <i class="fas fa-bolt"></i>
+            </div>
+            <span class="filter-label">Быстрые рецепты</span>
+            <span class="filter-count">7 рецептов</span>
+        </div>
+        <div class="quick-filter-item" data-filter="easy">
+            <div class="filter-icon">
+                <i class="fas fa-seedling"></i>
+            </div>
+            <span class="filter-label">Легкие рецепты</span>
+            <span class="filter-count">7 рецептов</span>
+        </div>
+        <div class="quick-filter-item" data-filter="healthy">
+            <div class="filter-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+            <span class="filter-label">Здоровое питание</span>
+            <span class="filter-count">3 рецептов</span>
+        </div>
+        <div class="quick-filter-item" data-filter="budget">
+            <div class="filter-icon">
+                <i class="fas fa-wallet"></i>
+            </div>
+            <span class="filter-label">Бюджетные рецепты</span>
+            <span class="filter-count">9 рецептов</span>
+        </div>
+        <div class="quick-filter-item" data-filter="family">
+            <div class="filter-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <span class="filter-label">Для семьи</span>
+            <span class="filter-count">7 рецептов</span>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Результаты поиска -->
+<section class="search-results-section" id="search-results">
+    <div class="container">
+        <div class="results-header">
+            <h2 class="section-title">Результаты поиска</h2>
+            <div class="results-meta">
+                <span class="results-count">Найдено: <strong>12 рецептов</strong></span>
+                <div class="sort-options">
+                    <label for="sort-select">Сортировать:</label>
+                    <select id="sort-select" class="sort-select">
+                        <option value="relevance">По релевантности</option>
+                        <option value="time-asc">По времени (сначала быстрые)</option>
+                        <option value="time-desc">По времени (сначала долгие)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="recipes-grid">
+            <!-- Рецепт 1 -->
+            <article class="recipe-card" data-recipe-id="1">
+                <div class="recipe-image">
+                    <div class="recipe-image-inner" style="background-image: url('../images/recipe/спагетти.jpg');"></div>
+                    <div class="recipe-badge">Итальянская</div>
+                    <div class="recipe-time"><i class="far fa-clock"></i> 25 мин</div>
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Спагетти Карбонара</h3>
+                    <p class="recipe-description">Классическое итальянское блюдо с беконом, яйцами и пармезаном</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-difficulty easy"><i class="fas fa-signal"></i> Легко</span>
+                    </div>
+                    <div class="recipe-tags">
+                        <span class="tag">#паста</span>
+                        <span class="tag">#итальянская</span>
+                        <span class="tag">#ужин</span>
+                    </div>
+                    <button class="view-recipe-btn" data-recipe-id="1">
+                        Посмотреть рецепт
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Рецепт 2 -->
+            <article class="recipe-card" data-recipe-id="2">
+                <div class="recipe-image">
+                    <div class="recipe-image-inner" style="background-image: url('../images/recipe/курица.jpg');"></div>
+                    <div class="recipe-badge">Основное</div>
+                    <div class="recipe-time"><i class="far fa-clock"></i> 45 мин</div>
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Курица в сливочном соусе</h3>
+                    <p class="recipe-description">Нежное куриное филе в сливочно-грибном соусе с травами</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-difficulty medium"><i class="fas fa-signal"></i> Средне</span>
+                    </div>
+                    <div class="recipe-tags">
+                        <span class="tag">#курица</span>
+                        <span class="tag">#основное</span>
+                        <span class="tag">#ужин</span>
+                    </div>
+                    <button class="view-recipe-btn" data-recipe-id="2">
+                        Посмотреть рецепт
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Рецепт 3 -->
+            <article class="recipe-card" data-recipe-id="3">
+                <div class="recipe-image">
+                    <div class="recipe-image-inner" style="background-image: url('../images/recipe/омлет.jpg');"></div>
+                    <div class="recipe-badge">Завтрак</div>
+                    <div class="recipe-time"><i class="far fa-clock"></i> 15 мин</div>
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Омлет с овощами</h3>
+                    <p class="recipe-description">Пышный омлет с помидорами, перцем и зеленью</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-difficulty easy"><i class="fas fa-signal"></i> Легко</span>
+                    </div>
+                    <div class="recipe-tags">
+                        <span class="tag">#завтрак</span>
+                        <span class="tag">#быстро</span>
+                        <span class="tag">#омлет</span>
+                    </div>
+                    <button class="view-recipe-btn" data-recipe-id="3">
+                        Посмотреть рецепт
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Рецепт 4 -->
+            <article class="recipe-card" data-recipe-id="4">
+                <div class="recipe-image">
+                    <div class="recipe-image-inner" style="background-image: url('../images/recipe/салатгрек.jpg');"></div>
+                    <div class="recipe-badge">Салат</div>
+                    <div class="recipe-time"><i class="far fa-clock"></i> 20 мин</div>
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Греческий салат</h3>
+                    <p class="recipe-description">Классический средиземноморский салат с сыром фета</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-difficulty easy"><i class="fas fa-signal"></i> Легко</span>
+                    </div>
+                    <div class="recipe-tags">
+                        <span class="tag">#салат</span>
+                        <span class="tag">#здоровое</span>
+                        <span class="tag">#овощи</span>
+                    </div>
+                    <button class="view-recipe-btn" data-recipe-id="4">
+                        Посмотреть рецепт
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Рецепт 5 -->
+            <article class="recipe-card" data-recipe-id="5">
+                <div class="recipe-image">
+                    <div class="recipe-image-inner" style="background-image: url('../images/recipe/тротшок.jpg');"></div>
+                    <div class="recipe-badge">Десерт</div>
+                    <div class="recipe-time"><i class="far fa-clock"></i> 60 мин</div>
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Шоколадный торт</h3>
+                    <p class="recipe-description">Влажный шоколадный торт с глазурью из темного шоколада</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-difficulty hard"><i class="fas fa-signal"></i> Сложно</span>
+                    </div>
+                    <div class="recipe-tags">
+                        <span class="tag">#десерт</span>
+                        <span class="tag">#торт</span>
+                        <span class="tag">#шоколад</span>
+                    </div>
+                    <button class="view-recipe-btn" data-recipe-id="5">
+                        Посмотреть рецепт
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+            <!-- Рецепт 6 -->
+            <article class="recipe-card" data-recipe-id="6">
+                <div class="recipe-image">
+                    <div class="recipe-image-inner" style="background-image: url('../images/recipe/суптыква.jpg');"></div>
+                    <div class="recipe-badge">Суп</div>
+                    <div class="recipe-time"><i class="far fa-clock"></i> 40 мин</div>
+                </div>
+                <div class="recipe-content">
+                    <h3 class="recipe-title">Тыквенный суп-пюре</h3>
+                    <p class="recipe-description">Кремовый суп из тыквы с имбирем и кокосовым молоком</p>
+                    <div class="recipe-meta">
+                        <span class="recipe-difficulty medium"><i class="fas fa-signal"></i> Средне</span>
+                    </div>
+                    <div class="recipe-tags">
+                        <span class="tag">#суп</span>
+                        <span class="tag">#тыква</span>
+                        <span class="tag">#обед</span>
+                    </div>
+                    <button class="view-recipe-btn" data-recipe-id="6">
+                        Посмотреть рецепт
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </article>
+
+<!-- Рецепт 7 -->
+<article class="recipe-card" data-recipe-id="7">
+<div class="recipe-image">
+<div class="recipe-image-inner" style="background-image: url('../images/recipe/пиццамаргарита.jpg');"></div>
+<div class="recipe-badge">Итальянская</div>
+<div class="recipe-time"><i class="far fa-clock"></i> 20 мин</div>
+</div>
+<div class="recipe-content">
+<h3 class="recipe-title">Пицца Маргарита</h3>
+<p class="recipe-description">Классическая пицца с томатным соусом, моцареллой и базиликом</p>
+<div class="recipe-meta">
+    <span class="recipe-difficulty easy"><i class="fas fa-signal"></i> Легко</span>
+</div>
+<div class="recipe-tags">
+    <span class="tag">#пицца</span>
+    <span class="tag">#итальянская</span>
+    <span class="tag">#ужин</span>
+</div>
+<button class="view-recipe-btn" data-recipe-id="7">
+    Посмотреть рецепт
+    <i class="fas fa-arrow-right"></i>
+</button>
+</div>
+</article>
+
+<!-- Рецепт 8 -->
+<article class="recipe-card" data-recipe-id="8">
+<div class="recipe-image">
+<div class="recipe-image-inner" style="background-image: url('../images/recipe/блиныягоды.jpg');"></div>
+<div class="recipe-badge">Завтрак</div>
+<div class="recipe-time"><i class="far fa-clock"></i> 10 мин</div>
+</div>
+<div class="recipe-content">
+<h3 class="recipe-title">Блины с ягодами</h3>
+<p class="recipe-description">Тонкие блинчики со свежими ягодами и кленовым сиропом</p>
+<div class="recipe-meta">
+    <span class="recipe-difficulty easy"><i class="fas fa-signal"></i> Легко</span>
+</div>
+<div class="recipe-tags">
+    <span class="tag">#блины</span>
+    <span class="tag">#завтрак</span>
+    <span class="tag">#сладкое</span>
+</div>
+<button class="view-recipe-btn" data-recipe-id="8">
+    Посмотреть рецепт
+    <i class="fas fa-arrow-right"></i>
+</button>
+</div>
+</article>
+
+<!-- Рецепт 9 -->
+<article class="recipe-card" data-recipe-id="9">
+<div class="recipe-image">
+<div class="recipe-image-inner" style="background-image: url('../images/recipe/лазаньявеган.jpg');"></div>
+<div class="recipe-badge">Вегетарианское</div>
+<div class="recipe-time"><i class="far fa-clock"></i> 35 мин</div>
+</div>
+<div class="recipe-content">
+<h3 class="recipe-title">Вегетарианская лазанья</h3>
+<p class="recipe-description">Слоеная паста с овощами, сыром и томатным соусом</p>
+<div class="recipe-meta">
+    <span class="recipe-difficulty medium"><i class="fas fa-signal"></i> Средне</span>
+</div>
+<div class="recipe-tags">
+    <span class="tag">#вегетарианское</span>
+    <span class="tag">#итальянская</span>
+    <span class="tag">#основное</span>
+</div>
+<button class="view-recipe-btn" data-recipe-id="9">
+    Посмотреть рецепт
+    <i class="fas fa-arrow-right"></i>
+</button>
+</div>
+</article>
+
+<!-- Рецепт 10 -->
+<article class="recipe-card" data-recipe-id="10">
+<div class="recipe-image">
+<div class="recipe-image-inner" style="background-image: url('../images/recipe/киноа.jpg');"></div>
+<div class="recipe-badge">Здоровое</div>
+<div class="recipe-time"><i class="far fa-clock"></i> 25 мин</div>
+</div>
+<div class="recipe-content">
+<h3 class="recipe-title">Киноа с овощами</h3>
+<p class="recipe-description">Полезное блюдо из киноа с обжаренными овощами</p>
+<div class="recipe-meta">
+    <span class="recipe-difficulty easy"><i class="fas fa-signal"></i> Легко</span>
+</div>
+<div class="recipe-tags">
+    <span class="tag">#киноа</span>
+    <span class="tag">#здоровое</span>
+    <span class="tag">#вегетарианское</span>
+</div>
+<button class="view-recipe-btn" data-recipe-id="10">
+    Посмотреть рецепт
+    <i class="fas fa-arrow-right"></i>
+</button>
+</div>
+</article>
+
+<!-- Рецепт 11 -->
+<article class="recipe-card" data-recipe-id="11">
+<div class="recipe-image">
+<div class="recipe-image-inner" style="background-image: url('../images/recipe/рискурица.jpg');"></div>
+<div class="recipe-badge">Азиатская</div>
+<div class="recipe-time"><i class="far fa-clock"></i> 30 мин</div>
+</div>
+<div class="recipe-content">
+<h3 class="recipe-title">Жареный рис с курицей</h3>
+<p class="recipe-description">Азиатский жареный рис с курицей, овощами и соевым соусом</p>
+<div class="recipe-meta">
+    <span class="recipe-difficulty medium"><i class="fas fa-signal"></i> Средне</span>
+</div>
+<div class="recipe-tags">
+    <span class="tag">#азиатская</span>
+    <span class="tag">#рис</span>
+    <span class="tag">#курица</span>
+</div>
+<button class="view-recipe-btn" data-recipe-id="11">
+    Посмотреть рецепт
+    <i class="fas fa-arrow-right"></i>
+</button>
+</div>
+</article>
+
+<!-- Рецепт 12 -->
+<article class="recipe-card" data-recipe-id="12">
+<div class="recipe-image">
+<div class="recipe-image-inner" style="background-image: url('../images/recipe/лососьгриль.jpg');"></div>
+<div class="recipe-badge">Диетическое</div>
+<div class="recipe-time"><i class="far fa-clock"></i> 40 мин</div>
+</div>
+<div class="recipe-content">
+<h3 class="recipe-title">Лосось на гриле</h3>
+<p class="recipe-description">Лосось на гриле с лимоном и зеленью, подается с овощами</p>
+<div class="recipe-meta">
+    <span class="recipe-difficulty easy"><i class="fas fa-signal"></i> Легко</span>
+</div>
+<div class="recipe-tags">
+    <span class="tag">#лосось</span>
+    <span class="tag">#здоровое</span>
+    <span class="tag">#гриль</span>
+</div>
+<button class="view-recipe-btn" data-recipe-id="12">
+    Посмотреть рецепт
+    <i class="fas fa-arrow-right"></i>
+</button>
+</div>
+</article>
+
+        </div>
+        
+        <div class="load-more-container">
+            <button class="load-more-btn">
+                <i class="fas fa-sync-alt"></i>
+                Показать еще рецепты
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Функции приложения -->
+<section class="app-features-section">
+    <div class="container">
+        <h2 class="section-title">Как работает наш поиск</h2>
+        <div class="features-grid">
+            <div class="feature-item glowing">
+                <div class="feature-icon glow">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Интеллектуальный поиск</h3>
+                <p>Умный алгоритм учитывает все ваши параметры: продукты, время, тип блюда и предпочтения</p>
+            </div>
+            
+            <div class="feature-item glowing">
+                <div class="feature-icon glow">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Экономия времени</h3>
+                <p>Находите подходящие рецепты за минуты вместо часов ручного поиска</p>
+            </div>
+            
+            <div class="feature-item glowing">
+                <div class="feature-icon glow">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h3>Список покупок</h3>
+                <p>Автоматически формируется список недостающих ингредиентов для выбранных рецептов</p>
+            </div>
+            
+            <div class="feature-item glowing">
+                <div class="feature-icon glow">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Персонализация</h3>
+                <p>Система запоминает ваши предпочтения и предлагает рецепты, которые вам понравятся</p>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<!-- Футер -->
+<footer>
+<div class="footer-content">
+    <ul class="footer-links">
+    <li><a href="../index/index.html">Главная</a></li>
+    <li><a href="../search/search.html">Поиск рецептов</a></li>
+    <li><a href="../catalog/catalog.html">Каталог рецептов</a></li>
+    <li><a href="../advice/advice.html">Советы</a></li>
+    </ul>
+    <p class="copyright">© 2025 Подбор рецепта. Все права защищены.</p>
+</div>
+</footer>
+
+<script src="../index/index.js"></script>
+<script src="../search/search.js"></script>
+</body>
+</html>

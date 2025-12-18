@@ -760,3 +760,810 @@
     padding-bottom: 1rem !important; /* Уменьшено с 1.5rem */
   }
 }
+[file content end]
+Основные изменения:
+
+✅ Добавлен padding-top: 80px для .tip-detail-page - отступ для фиксированной шапки
+
+✅ Уменьшена высота героя с 60vh до 50vh
+
+✅ Изменено выравнивание контента на центрирование
+
+✅ Уменьшены все крупные отступы и размеры шрифтов
+
+✅ Все боковые элементы теперь видны на экране
+
+✅ Улучшена адаптивность для мобильных устройств
+
+✅ Уменьшено margin-bottom у всех секций
+
+Теперь шапка не будет закрывать контент, и все элементы будут видны на экране!
+
+сделай просто чтобы то что справа шло внизу, а еще нужен больше отступ, так как опять не видно героя секции
+css
+[file name]: tip-detail.css
+[file content begin]
+@charset "UTF-8";
+
+/* Фиксируем шапку и добавляем отступ для основного контента */
+.tip-detail-page {
+  padding-top: 120px; /* Увеличили отступ для фиксированной шапки */
+  min-height: 100vh;
+  background-color: #121212;
+}
+
+/* Герой секция */
+.tip-hero-bg {
+  position: relative;
+  height: 50vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url("../images/tips/карбонара.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 3rem;
+}
+
+.tip-hero-bg .tip-hero-content {
+  width: 100%;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.tip-hero-bg .tip-hero-content .tip-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tip-hero-bg .tip-hero-content .tip-header-content .tip-category-badge {
+  display: inline-block;
+  background-color: #4DBE57;
+  color: #121212;
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tip-hero-bg .tip-hero-content .tip-header-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #FFFFFF;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tip-hero-bg .tip-hero-content .tip-header-content .tip-meta {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+  flex-wrap: wrap;
+}
+
+.tip-hero-bg .tip-hero-content .tip-header-content .tip-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.tip-hero-bg .tip-hero-content .tip-header-content .tip-meta .difficulty.easy {
+  color: #4DBE57;
+  font-weight: 500;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.tip-content-wide {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-bottom: 3rem;
+  box-shadow: none;
+}
+
+/* На мобильных - боковая панель под основным контентом */
+.tip-content-wide .content-columns {
+  display: flex;
+  flex-direction: column; /* Всегда колонка */
+  gap: 3rem;
+}
+
+/* На десктопе - возвращаем сетку */
+@media (min-width: 992px) {
+  .tip-content-wide .content-columns {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 3rem;
+    align-items: start;
+  }
+}
+
+.tip-content-wide .content-columns .main-content {
+  background: #1A1A1A;
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1px solid rgba(62, 122, 96, 0.2);
+  order: 1; /* Основной контент всегда первый */
+}
+
+.tip-content-wide .content-columns .sidebar {
+  order: 2; /* Боковая панель всегда вторая */
+}
+
+@media (min-width: 992px) {
+  .tip-content-wide .content-columns .main-content {
+    order: 1;
+  }
+  
+  .tip-content-wide .content-columns .sidebar {
+    order: 2;
+    position: sticky;
+    top: 120px; /* Увеличили с учетом большего отступа */
+  }
+}
+
+.tip-content-wide .content-columns .main-content .tip-section {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(62, 122, 96, 0.1);
+}
+
+.tip-content-wide .content-columns .main-content .tip-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.tip-content-wide .content-columns .main-content .tip-section .section-icon {
+  font-size: 2rem;
+  color: #4DBE57;
+  margin-bottom: 0.8rem;
+}
+
+.tip-content-wide .content-columns .main-content .tip-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: #FFFFFF;
+}
+
+.tip-content-wide .content-columns .main-content .tip-section h3 {
+  font-size: 1.3rem;
+  margin: 1.2rem 0 0.8rem;
+  color: #FFFFFF;
+}
+
+.tip-content-wide .content-columns .main-content .tip-section p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+}
+
+.tip-content-wide .content-columns .main-content .tip-section ul {
+  color: #ccc;
+  line-height: 1.6;
+  padding-left: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.tip-content-wide .content-columns .main-content .tip-section ul li {
+  margin-bottom: 0.6rem;
+  position: relative;
+}
+
+.tip-content-wide .content-columns .main-content .tip-section ul li:before {
+  content: "•";
+  color: #4DBE57;
+  font-weight: bold;
+  position: absolute;
+  left: -1.2rem;
+}
+
+.tip-content-wide .content-columns .main-content .tip-section strong {
+  color: #FFFFFF;
+}
+
+.tip-content-wide .content-columns .main-content .tip-section .tip-note {
+  background: rgba(26, 60, 52, 0.3);
+  border-left: 4px solid #4DBE57;
+  padding: 1.2rem;
+  margin: 1.2rem 0;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.tip-content-wide .content-columns .main-content .tip-section .tip-note i {
+  color: #4DBE57;
+  font-size: 1.5rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.tip-content-wide .content-columns .main-content .tip-section .tip-note p {
+  margin: 0;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.tip-content-wide .content-columns .main-content .tip-section .mistake-item {
+  background: rgba(22, 114, 77, 0.1);
+  border: 1px solid rgba(34, 153, 108, 0.2);
+  border-radius: 10px;
+  padding: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.tip-content-wide .content-columns .main-content .tip-section .mistake-item .mistake-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.tip-content-wide .content-columns .main-content .tip-section .mistake-item .mistake-header i {
+  color: #4DBE57;
+  font-size: 1.2rem;
+}
+
+.tip-content-wide .content-columns .main-content .tip-section .mistake-item .mistake-header h3 {
+  margin: 0;
+  color: #4DBE57;
+  font-size: 1.2rem;
+}
+
+.tip-content-wide .content-columns .main-content .tip-section .mistake-item p {
+  margin: 0;
+  color: #e0e0e0;
+}
+
+.tip-content-wide .content-columns .main-content .pro-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+.tip-content-wide .content-columns .sidebar .sidebar-card {
+  background: #1A1A1A;
+  border-radius: 15px;
+  padding: 1.8rem;
+  margin-bottom: 1.8rem;
+  border: 1px solid rgba(62, 122, 96, 0.2);
+}
+
+.tip-content-wide .content-columns .sidebar .sidebar-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.tip-content-wide .content-columns .sidebar .sidebar-card h3 i {
+  color: #4DBE57;
+}
+
+.tip-content-wide .content-columns .sidebar .sidebar-card .quick-guide {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.tip-content-wide .content-columns .sidebar .sidebar-card .quick-guide .guide-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.tip-content-wide .content-columns .sidebar .sidebar-card .quick-guide .guide-step .step-number {
+  background: #4DBE57;
+  color: #121212;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.tip-content-wide .content-columns .sidebar .sidebar-card .quick-guide .guide-step p {
+  margin: 0;
+  color: #ccc;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.tip-content-wide .content-columns .sidebar .sidebar-card .cooking-times {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.tip-content-wide .content-columns .sidebar .sidebar-card .cooking-times .time-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(62, 122, 96, 0.1);
+}
+
+.tip-content-wide .content-columns .sidebar .sidebar-card .cooking-times .time-item:last-child {
+  border-bottom: none;
+}
+
+.tip-content-wide .content-columns .sidebar .sidebar-card .cooking-times .time-item .pasta-type {
+  color: #ccc;
+}
+
+.tip-content-wide .content-columns .sidebar .sidebar-card .cooking-times .time-item .time {
+  color: #4DBE57;
+  font-weight: 500;
+}
+
+.tip-content-wide .content-columns .sidebar .sidebar-card .related-tips {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.tip-content-wide .content-columns .sidebar .sidebar-card .related-tips .related-tip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(62, 122, 96, 0.1);
+  border-radius: 10px;
+  text-decoration: none;
+  color: #ccc;
+  transition: all 0.3s ease;
+}
+
+.tip-content-wide .content-columns .sidebar .sidebar-card .related-tips .related-tip:hover {
+  background: rgba(62, 122, 96, 0.2);
+  color: #4DBE57;
+  transform: translateX(5px);
+}
+
+.tip-content-wide .content-columns .sidebar .sidebar-card .related-tips .related-tip i {
+  color: #4DBE57;
+  font-size: 1.2rem;
+}
+
+.tip-content-wide .content-columns .sidebar .sidebar-card .related-tips .related-tip span {
+  font-size: 0.95rem;
+}
+
+.tip-content-wide .content-columns .main-content .pro-tips-grid .pro-tip {
+  background: rgba(77, 170, 87, 0.1);
+  border: 1px solid rgba(77, 170, 87, 0.2);
+  border-radius: 10px;
+  padding: 1.2rem;
+}
+
+.tip-content-wide .content-columns .main-content .pro-tips-grid .pro-tip .pro-tip-icon {
+  font-size: 1.8rem;
+  color: #4DBE57;
+  margin-bottom: 0.8rem;
+}
+
+.tip-content-wide .content-columns .main-content .pro-tips-grid .pro-tip h3 {
+  font-size: 1.2rem;
+  margin: 0 0 0.6rem;
+  color: #FFFFFF;
+}
+
+.tip-content-wide .content-columns .main-content .pro-tips-grid .pro-tip p {
+  margin: 0;
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.tip-content-wide .tip-tags-bottom {
+  background: #1A1A1A;
+  border-radius: 15px;
+  padding: 1.8rem;
+  margin-bottom: 1.8rem;
+  border: 1px solid rgba(62, 122, 96, 0.2);
+  margin-top: 2.5rem;
+}
+
+.tip-content-wide .tip-tags-bottom h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  color: #FFFFFF;
+}
+
+.tip-content-wide .tip-tags-bottom .tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tip-content-wide .tip-tags-bottom .tags-container .tag {
+  background: rgba(62, 122, 96, 0.2);
+  color: #4DBE57;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.tip-content-wide .tip-tags-bottom .tags-container .tag:hover {
+  background: #2E8B57;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.tip-navigation-simple {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 0;
+  border-top: 1px solid rgba(62, 122, 96, 0.2);
+  margin-top: 2rem;
+}
+
+.tip-navigation-simple .back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1.5rem;
+  background: rgba(62, 122, 96, 0.2);
+  color: #4DBE57;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tip-navigation-simple .back-btn:hover {
+  background: #2E8B57;
+  color: #FFFFFF;
+  transform: translateX(-5px);
+}
+
+.tip-navigation-simple .nav-arrows {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.tip-navigation-simple .nav-arrows .nav-arrow {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(62, 122, 96, 0.2);
+  color: #4DBE57;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.tip-navigation-simple .nav-arrows .nav-arrow:hover:not(.disabled) {
+  background: #2E8B57;
+  color: #FFFFFF;
+  transform: scale(1.1);
+}
+
+.tip-navigation-simple .nav-arrows .nav-arrow.disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.tip-navigation-simple .current-tip {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Адаптивность для телефонов */
+@media (max-width: 991px) {
+  .tip-detail-page {
+    padding-top: 100px; /* Немного меньше на планшетах */
+  }
+  
+  /* На мобильных боковая панель всегда под основным контентом */
+  .content-columns {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  .sidebar {
+    order: 2 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .tip-detail-page {
+    padding-top: 90px;
+  }
+  
+  .tip-hero-bg {
+    height: 45vh;
+    min-height: 350px;
+    margin-bottom: 2rem;
+  }
+  
+  .tip-hero-content .tip-header-content {
+    padding: 0 1rem !important;
+  }
+  
+  .tip-header-content h1 {
+    font-size: 2rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.8rem !important;
+  }
+  
+  .tip-category-badge {
+    font-size: 0.8rem !important;
+    padding: 0.4rem 1rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+  
+  .tip-meta {
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .container {
+    padding: 0 1rem !important;
+  }
+  
+  .main-content {
+    padding: 1.5rem !important;
+    border-radius: 15px !important;
+  }
+  
+  .tip-section {
+    padding: 1.2rem 0 !important;
+    margin-bottom: 1.8rem !important;
+  }
+  
+  .tip-section h2 {
+    font-size: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .tip-section h3 {
+    font-size: 1.2rem !important;
+    margin: 1rem 0 0.6rem !important;
+  }
+  
+  .tip-section p {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  .section-icon {
+    font-size: 1.8rem !important;
+  }
+  
+  .pro-tips-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .pro-tip {
+    padding: 1.2rem !important;
+  }
+  
+  .tip-note {
+    padding: 1.2rem !important;
+    flex-direction: column !important;
+    gap: 0.8rem !important;
+  }
+  
+  .tip-note i {
+    align-self: flex-start !important;
+  }
+  
+  .mistake-item {
+    padding: 1.2rem !important;
+  }
+  
+  .sidebar-card {
+    padding: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .tip-tags-bottom {
+    padding: 1.5rem !important;
+    margin-top: 2rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .tags-container {
+    gap: 0.5rem !important;
+  }
+  
+  .tag {
+    padding: 0.5rem 0.9rem !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .tip-detail-page {
+    padding-top: 85px;
+  }
+  
+  .tip-hero-bg {
+    height: 40vh;
+    min-height: 280px;
+    align-items: center;
+  }
+  
+  .tip-hero-content {
+    padding-bottom: 1.5rem !important;
+  }
+  
+  .tip-header-content h1 {
+    font-size: 1.6rem !important;
+  }
+  
+  .tip-meta {
+    font-size: 0.85rem !important;
+  }
+  
+  .tip-meta span {
+    flex-wrap: wrap !important;
+  }
+  
+  .main-content {
+    padding: 1.2rem !important;
+  }
+  
+  .tip-section {
+    padding: 1rem 0 !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .tip-section:last-child {
+    margin-bottom: 0 !important;
+  }
+  
+  .tip-section h2 {
+    font-size: 1.3rem !important;
+  }
+  
+  .tip-section h3 {
+    font-size: 1.1rem !important;
+  }
+  
+  .tip-section ul {
+    padding-left: 1.2rem !important;
+  }
+  
+  .quick-guide .guide-step {
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+  }
+  
+  .guide-step .step-number {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .tip-navigation-simple {
+    flex-direction: column !important;
+    gap: 1.2rem !important;
+    padding: 1.2rem 0 !important;
+    text-align: center !important;
+  }
+  
+  .tip-navigation-simple .back-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 0.9rem 1.5rem !important;
+  }
+  
+  .tip-navigation-simple .nav-arrows {
+    width: 100% !important;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+  }
+  
+  .nav-arrows .nav-arrow {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  /* Улучшенная читаемость для маленьких экранов */
+  p, li, span {
+    line-height: 1.6 !important;
+  }
+  
+  /* Адаптация табличных данных */
+  .cooking-times .time-item {
+    flex-direction: column !important;
+    gap: 0.2rem !important;
+    padding: 0.5rem 0 !important;
+  }
+  
+  /* Улучшение связанных советов */
+  .related-tip {
+    padding: 0.8rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .related-tip i {
+    font-size: 1rem !important;
+  }
+}
+
+/* Очень маленькие экраны (до 400px) */
+@media (max-width: 400px) {
+  .tip-detail-page {
+    padding-top: 80px;
+  }
+  
+  .tip-header-content h1 {
+    font-size: 1.4rem !important;
+  }
+  
+  .tip-category-badge {
+    font-size: 0.75rem !important;
+    padding: 0.3rem 0.8rem !important;
+  }
+  
+  .container {
+    padding: 0 0.8rem !important;
+  }
+  
+  .main-content {
+    padding: 1rem !important;
+  }
+  
+  .tags-container {
+    justify-content: center !important;
+  }
+  
+  .tag {
+    font-size: 0.8rem !important;
+    padding: 0.4rem 0.7rem !important;
+  }
+  
+  .tip-section h2 {
+    font-size: 1.2rem !important;
+  }
+  
+  .pro-tip {
+    padding: 1rem !important;
+  }
+  
+  .pro-tip-icon {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Портретная ориентация на мобильных */
+@media (max-height: 700px) and (max-width: 768px) {
+  .tip-hero-bg {
+    height: 40vh;
+    min-height: 250px;
+  }
+  
+  .tip-hero-content {
+    padding-bottom: 1rem !important;
+  }
+}

@@ -1,8 +1,6 @@
 @charset "UTF-8";
-
-/* Фиксируем шапку и добавляем отступ для основного контента */
 .tip-detail-page {
-  padding-top: 120px; /* Большой отступ для фиксированной шапки */
+  padding-top: 120px; 
   min-height: 100vh;
   background-color: #121212;
 }
@@ -87,14 +85,12 @@
   box-shadow: none;
 }
 
-/* Всегда вертикальное расположение: основной контент сверху, боковая панель снизу */
 .tip-content-wide .content-columns {
   display: flex;
   flex-direction: column;
   gap: 3rem;
 }
 
-/* На десктопе - два блока рядом */
 @media (min-width: 992px) {
   .tip-content-wide .content-columns {
     display: grid;
@@ -112,12 +108,16 @@
 }
 
 .tip-content-wide .content-columns .sidebar {
-  /* На мобильных будет под основным контентом */
+  /* На мобильных под основным контентом */
 }
 
 @media (min-width: 992px) {
-  .tip-content-wide .content-columns .sidebar {
-    /* На десктопе боковая панель справа, но без sticky */
+    .tip-content-wide .content-columns .sidebar {
+    position: sticky;
+    top: 120px;
+    height: fit-content;
+    max-height: calc(100vh - 140px); 
+    overflow-y: auto;
   }
 }
 

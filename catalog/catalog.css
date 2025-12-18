@@ -109,7 +109,7 @@
     margin-top: 0.5rem;
 }
 
-/* Категории рецептов - 3 в строку */
+/* Категории рецептов */
 .categories-section {
     padding: 5rem 0;
     background-color: #121212;
@@ -246,7 +246,7 @@
     font-weight: 500;
 }
 
-/* Кнопки "Смотреть все" - стилизованные и по центру */
+/* Кнопки "Смотреть все" */
 .category-card .view-all-btn-container {
     margin-top: auto;
     padding-top: 1.5rem;
@@ -330,7 +330,7 @@
     color: white;
 }
 
-/* Улучшенная сетка рецептов */
+/* Сетка рецептов */
 .recipes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -613,4 +613,5 @@
         min-width: 120px;
         padding: 0.7rem 1.2rem;
     }
+
 }

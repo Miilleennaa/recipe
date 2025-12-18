@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryCards = document.querySelectorAll('.category-card');
     const allTipCards = Array.from(document.querySelectorAll('.tip-card'));
     const tipsGrid = document.querySelector('.tips-grid');
-    let isAnimating = false; // Флаг для предотвращения конфликтов анимаций
+    let isAnimating = false; 
     
-    // Активируем карточку "Все советы" по умолчанию
+    // Активация карточки "Все советы" по умолчанию
     const allCategoryCard = document.querySelector('.category-card[data-category="all"]');
     if (allCategoryCard) {
         allCategoryCard.classList.add('active');
@@ -16,19 +16,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isAnimating) return;
         isAnimating = true;
         
-        // Удаляем активный класс со всех категорий
+        // Удаление активного класса со всех категорий
         categoryCards.forEach(c => c.classList.remove('active'));
         
-        // Добавляем активный класс выбранной категории
+        // Добавление активного класса выбранной категории
         const activeCard = document.querySelector(`.category-card[data-category="${category}"]`);
         if (activeCard) {
             activeCard.classList.add('active');
         }
         
-        // Скрываем сообщение "Нет результатов"
         hideNoResultsMessage();
         
-        // Сначала скрываем все карточки с анимацией исчезновения
         const cardsToHide = [];
         const cardsToShow = [];
         
@@ -45,12 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Если нет карточек для показа
         if (cardsToShow.length === 0) {
-            // Сначала скрываем все карточки
             allTipCards.forEach(card => {
                 card.classList.add('hiding');
             });
             
-            // Показываем сообщение после анимации
             setTimeout(() => {
                 allTipCards.forEach(card => {
                     card.classList.add('hidden');
@@ -63,19 +59,16 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         
-        // Шаг 1: Скрываем ненужные карточки
         cardsToHide.forEach(card => {
             card.classList.add('hiding');
         });
         
-        // Шаг 2: После исчезновения скрываем их полностью
         setTimeout(() => {
             cardsToHide.forEach(card => {
                 card.classList.add('hidden');
                 card.classList.remove('hiding');
             });
             
-            // Шаг 3: Сбрасываем анимацию у нужных карточек
             cardsToShow.forEach(card => {
                 if (card.classList.contains('hidden')) {
                     card.classList.remove('hidden');
@@ -84,10 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
             
-            // Шаг 4: Принудительное обновление DOM
             void tipsGrid.offsetWidth;
             
-            // Шаг 5: Показываем нужные карточки с анимацией
             setTimeout(() => {
                 cardsToShow.forEach((card, index) => {
                     setTimeout(() => {
@@ -96,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 10);
                 });
                 
-                // Шаг 6: Завершаем анимацию
                 setTimeout(() => {
                     cardsToShow.forEach(card => {
                         card.classList.remove('showing');
@@ -105,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         card.style.transform = '';
                     });
                     
-                    // Обновляем счетчик
                     updateCardCount(category, cardsToShow.length);
                     isAnimating = false;
                 }, 500 + (cardsToShow.length * 50));
@@ -180,15 +169,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Обработчик клика для категорий
     categoryCards.forEach(card => {
         card.addEventListener('click', (e) => {
-            // Если уже активна или идет анимация - игнорируем
             if (card.classList.contains('active') || isAnimating) {
                 return;
             }
             
-            // Получаем категорию
             const category = card.getAttribute('data-category');
-            
-            // Фильтруем карточки
+
             filterCards(category);
         });
     });
@@ -220,7 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 submitBtn.textContent = '✓ Отправлено!';
                 
-                // Возвращаем кнопку в исходное состояние
                 setTimeout(() => {
                     submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
@@ -238,7 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
             categories[category] = (categories[category] || 0) + 1;
         });
         
-        // Обновляем счетчики в карточках категорий
         categoryCards.forEach(card => {
             const category = card.getAttribute('data-category');
             const countElement = card.querySelector('p');
@@ -249,7 +233,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Вызываем инициализацию счетчиков
     initializeCounters();
     
     // Плавное появление карточек при загрузке страницы
@@ -258,4 +241,5 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.animationDelay = `${index * 0.1}s`;
         });
     }, 300);
+
 });

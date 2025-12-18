@@ -1079,7 +1079,7 @@
         position: relative !important;
     }
     
-    /* Исправляем сетку модального окна */
+    /* Сетка модального окна */
     .recipe-modal-content {
         display: flex !important;
         flex-direction: column !important;
@@ -1088,13 +1088,13 @@
         max-height: 85vh;
     }
     
-    /* Исправляем изображение рецепта */
+    /* Изображение рецепта */
     .modal-recipe-image {
         height: 200px;
         min-height: 200px;
     }
     
-    /* Исправляем область с деталями рецепта */
+    /* Область с деталями рецепта */
     .modal-recipe-details {
         padding: 1.5rem;
         flex: 1 !important;
@@ -1102,7 +1102,7 @@
         max-height: calc(85vh - 200px - 80px);
     }
     
-    /* Улучшение отображения списка ингредиентов */
+    /* Отображения списка ингредиентов */
     .ingredient-item {
         display: flex;
         justify-content: space-between;
@@ -1126,7 +1126,7 @@
         white-space: nowrap;
     }
     
-    /* Улучшение отображения шагов приготовления */
+    /* Отображения шагов приготовления */
     .step-item {
         display: flex;
         gap: 1rem;
@@ -1159,7 +1159,7 @@
         font-size: 0.9rem;
     }
     
-    /* Улучшение отображения вкладок на мобильных */
+    /* Отображения вкладок на мобильных */
     .modal-tabs {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -1175,7 +1175,7 @@
         font-size: 0.9rem;
     }
     
-    /* Улучшение отображения заголовка и мета-информации */
+    /* Улучшение отображения заголовка и информации */
     .modal-recipe-header {
         flex-wrap: wrap;
         gap: 0.8rem;
@@ -1340,7 +1340,7 @@
     100% { transform: rotate(360deg); }
 }
 
-/* Улучшенный внешний вид тегов ингредиентов */
+/* Внешний вид тегов ингредиентов */
 .ingredient-tag {
     background: rgba(77, 170, 87, 0.2);
     color: var(--accent-green);
@@ -1627,4 +1627,5 @@
     .feature-item.glowing {
         padding: 1.5rem;
     }
+
 }

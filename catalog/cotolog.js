@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', () => {
             const recipeId = item.getAttribute('data-recipe-id');
             if (recipeId) {
-                // Используем функцию из search.js для открытия модального окна
+                // Функция из search.js для открытия модального окна
                 if (typeof openRecipeModal === 'function') {
                     openRecipeModal(recipeId);
                 }
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Если клик не по кнопке "Смотреть все" внутри карточки
             if (!e.target.closest('.view-all-btn')) {
                 const category = card.getAttribute('data-category');
-                // Показываем только рецепты этой категории
+                // Только рецепты этой категории
                 filterRecipesByCategory(category);
                 
                 // Прокрутка к сетке рецептов
@@ -51,19 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        // Показываем уведомление
+        // Уведомление
         const categoryName = getCategoryName(category);
         showNotification(`Показаны ${visibleCount} рецептов из категории: ${categoryName}`, 'info');
         
-        // Обновляем активную кнопку фильтра
+        // Обновление активной кнопки фильтра
         const filterBtns = document.querySelectorAll('.filter-btn');
         filterBtns.forEach(btn => btn.classList.remove('active'));
-        filterBtns[0].classList.add('active'); // Активируем "Все рецепты"
+        filterBtns[0].classList.add('active'); 
     }
     
     // Функция для определения, принадлежит ли рецепт категории
     function isRecipeInCategory(recipeId, category) {
-        // Здесь должна быть логика определения категории рецепта
         const recipeCategories = {
             '1': ['main'],
             '2': ['main'],
@@ -105,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const filterText = btn.textContent;
             
             if (filterText === 'Все рецепты') {
-                // Показываем все рецепты
+                // Все рецепты
                 const allRecipeCards = document.querySelectorAll('.recipe-card');
                 allRecipeCards.forEach(card => {
                     card.style.display = 'block';
@@ -113,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 showNotification(`Показаны все 12 рецептов`, 'info');
             } else if (filterText === 'Популярные') {
-                // Фильтр популярных (просто показываем все)
+                // Фильтр популярных 
                 const allRecipeCards = document.querySelectorAll('.recipe-card');
                 allRecipeCards.forEach(card => {
                     card.style.display = 'block';
@@ -186,17 +185,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 showNotification(`Показаны ${visibleCount} легких рецептов для начинающих`, 'info');
             } else {
-                // Для других фильтров - простая демонстрация
                 showNotification(`Фильтр "${filterText}" применен`, 'info');
             }
         });
     });
     
-    // Добавляем обработчики для кнопок "Посмотреть рецепт"
+    // Обработчики для кнопок "Посмотреть рецепт"
     const viewRecipeBtns = document.querySelectorAll('.view-recipe-btn');
     viewRecipeBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Предотвращаем всплытие события
+            e.stopPropagation(); 
             const recipeId = btn.getAttribute('data-recipe-id');
             if (recipeId && typeof openRecipeModal === 'function') {
                 openRecipeModal(recipeId);
@@ -204,11 +202,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Добавляем обработчики для карточек рецептов
+    // Обработчики для карточек рецептов
     const recipeCards = document.querySelectorAll('.recipe-card');
     recipeCards.forEach(card => {
         card.addEventListener('click', (e) => {
-            // Открываем рецепт только если клик не по кнопке внутри карточки
+            // Открытие ецепта только если клик не по кнопке внутри карточки
             if (!e.target.closest('.view-recipe-btn')) {
                 const recipeId = card.getAttribute('data-recipe-id');
                 if (recipeId && typeof openRecipeModal === 'function') {
@@ -222,8 +220,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadMoreBtn = document.querySelector('.load-more-btn');
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', () => {
-            // В реальном приложении здесь была бы загрузка дополнительных рецептов
-            // Для демонстрации просто показываем уведомление
             showNotification('Все рецепты уже загружены!', 'info');
             
             // Анимация кнопки
@@ -284,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
     
-    // Добавляем стили для анимации уведомлений, если их еще нет
+    // Стили для анимации уведомлений
     if (!document.querySelector('#notification-styles')) {
         const style = document.createElement('style');
         style.id = 'notification-styles';
@@ -330,7 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
     viewAllBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            e.stopPropagation(); // Останавливаем всплытие
+            e.stopPropagation(); 
             
             const card = btn.closest('.category-card');
             const category = card.getAttribute('data-category');
@@ -344,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     recipesGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
                 
-                // Активируем кнопку "Все рецепты" в фильтрах
+                // Кнопка "Все рецепты" в фильтрах
                 const filterBtns = document.querySelectorAll('.filter-btn');
                 filterBtns.forEach(b => b.classList.remove('active'));
                 if (filterBtns[0]) {
@@ -353,4 +349,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
 });

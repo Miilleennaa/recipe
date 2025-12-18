@@ -301,11 +301,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function filterRecipes() {
-    // Определяем активную вкладку
+    // Определение активной вкладки
     const activeTab = document.querySelector('.search-tab.active').getAttribute('data-tab');
     console.log('Активная вкладка:', activeTab);
     
-    // Очищаем предыдущие фильтры
+    // Очищение предыдущих фильтров
     let searchQuery = '';
     let cookingTime = '';
     let dishType = '';
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let ingredientTime = '';
     let ingredientType = '';
     
-    // Получаем значения только из активной вкладки
+    // Получение значения только из активной вкладки
     if (activeTab === 'basic') {
         // Фильтры из вкладки "Быстрый поиск"
         const basicQueryEl = document.getElementById('basic-query');
@@ -388,11 +388,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         
-// 2. Фильтр по времени приготовления (полная версия с всеми опциями)
+// 2. Фильтр по времени приготовления 
 if (passesFilters && cookingTime) {
     let timePasses = false;
     const recipeTime = recipe.time;
-    const cookingTimeValue = parseInt(cookingTime); // Конвертируем в число
+    const cookingTimeValue = parseInt(cookingTime); 
     
     switch(cookingTime) {
         case '10': // До 10 минут
@@ -440,7 +440,7 @@ if (passesFilters && cookingTime) {
             debugInfo.timeFilter = `Более 2 часов: ${recipeTime} > 120`;
             break;
         default:
-            timePasses = true; // Любое время или неизвестное значение
+            timePasses = true; 
             debugInfo.timeFilter = 'Любое время';
     }
     
@@ -510,7 +510,6 @@ if (passesFilters && cookingTime) {
             }
         }
         
-        // ОТЛАДКА: выводим информацию о фильтрации
         if (!passesFilters) {
             console.log('Рецепт отфильтрован:', debugInfo);
         } else {
@@ -527,10 +526,10 @@ if (passesFilters && cookingTime) {
     const sortType = sortSelect?.value || 'relevance';
     sortRecipes(filteredRecipes, sortType);
     
-    // После фильтрации сбрасываем счетчик отображаемых рецептов
+    // После фильтрации сброс счетчика отображаемых рецептов
     displayedRecipesCount = Math.min(recipesPerLoad, filteredRecipes.length);
     
-    // Обновляем отображение
+    // Обновление отображения
     updateRecipesDisplay();
 
     return filteredRecipes;
@@ -599,12 +598,11 @@ if (passesFilters && cookingTime) {
             recipesGrid.appendChild(recipeCard);
         });
         
-        // Обновляем счетчик
+        // Обновление счетчика
         if (resultsCount) {
             resultsCount.textContent = `${filteredRecipes.length} рецептов`;
         }
-        
-        // Показываем/скрываем кнопку "Показать еще"
+
         if (loadMoreBtn) {
             if (displayedRecipesCount < filteredRecipes.length) {
                 loadMoreBtn.style.display = 'flex';
@@ -613,7 +611,6 @@ if (passesFilters && cookingTime) {
             }
         }
         
-        // Добавляем обработчики для кнопок просмотра рецептов
         addViewRecipeHandlers();
     }
     
@@ -623,7 +620,7 @@ if (passesFilters && cookingTime) {
         card.className = 'recipe-card';
         card.setAttribute('data-recipe-id', recipe.id);
         
-        // Определяем текст сложности
+        // Текст сложности
         let difficultyText = '';
         let difficultyColorClass = '';
         switch(recipe.difficulty) {
@@ -672,7 +669,6 @@ if (passesFilters && cookingTime) {
         displayedRecipesCount = Math.min(displayedRecipesCount + recipesPerLoad, filteredRecipes.length);
         updateRecipesDisplay();
         
-        // Прокручиваем к новым рецептам
         const newCards = recipesGrid.querySelectorAll('.recipe-card');
         if (newCards.length > 0) {
             const lastCard = newCards[newCards.length - 1];
@@ -709,8 +705,7 @@ if (passesFilters && cookingTime) {
         });
     }
     
-    // Обработчики для модального окна (уже определены в HTML onclick)
-    // Добавляем обработчики для overlay и escape
+    // Обработчики для модального окна
     document.querySelectorAll('.modal-overlay').forEach(overlay => {
         overlay.addEventListener('click', function() {
             const modal = this.closest('.recipe-modal');
@@ -765,10 +760,10 @@ if (passesFilters && cookingTime) {
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Поиск...';
     submitBtn.disabled = true;
     
-    // Определяем активную вкладку
+    // Определение ктивной вкладки
     const activeTab = document.querySelector('.search-tab.active').getAttribute('data-tab');
     
-    // Показываем индикатор загрузки
+    // Индикатор загрузки
     const searchingIndicator = document.createElement('div');
     searchingIndicator.className = 'searching-indicator';
     searchingIndicator.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Ищем рецепты...';
@@ -782,7 +777,7 @@ if (passesFilters && cookingTime) {
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
         
-        // Фильтруем рецепты
+        // Фильтр рецептов
         const foundRecipes = filterRecipes();
         
         // Прокрутка к результатам
@@ -791,7 +786,7 @@ if (passesFilters && cookingTime) {
             resultsSection.scrollIntoView({ behavior: 'smooth' });
         }
         
-        // Показываем уведомление ТОЛЬКО если найдено меньше всех рецептов
+        // Уведомление если найдено меньше всех рецептов
         if (foundRecipes.length < allRecipes.length) {
             showNotification(`Найдено ${foundRecipes.length} рецептов`, 'success');
         }
@@ -800,7 +795,7 @@ if (passesFilters && cookingTime) {
         });
     }
     
-    // Быстрые фильтры (обновленные элементы)
+    // Быстрые фильтры 
     const quickFilterItems = document.querySelectorAll('.quick-filter-item');
     
     if (quickFilterItems && quickFilterItems.length > 0) {
@@ -808,10 +803,8 @@ if (passesFilters && cookingTime) {
             item.addEventListener('click', () => {
                 const filterType = item.getAttribute('data-filter');
                 
-                // Сбрасываем все фильтры
                 resetAllFilters();
                 
-                // Устанавливаем соответствующие фильтры в зависимости от типа
                 switch(filterType) {
                     case 'quick':
                         document.getElementById('cooking-time').value = '30';
@@ -973,14 +966,14 @@ if (passesFilters && cookingTime) {
     // Кнопку сброса в заголовок результатов
     const resultsHeader = document.querySelector('.results-header');
     if (resultsHeader) {
-        // Контейнер для мета-информации и кнопки сброса
+        // Контейнер для информации и кнопки сброса
         const metaContainer = document.createElement('div');
         metaContainer.style.display = 'flex';
         metaContainer.style.alignItems = 'center';
         metaContainer.style.gap = '1.5rem';
         metaContainer.style.flexWrap = 'wrap';
         
-        // Перемещение существующей мета-информации в контейнер
+        // Перемещение существующей информации в контейнер
         const existingMeta = document.querySelector('.results-meta');
         if (existingMeta) {
             metaContainer.appendChild(existingMeta);
@@ -1083,7 +1076,6 @@ if (passesFilters && cookingTime) {
             }
         }
         
-        /* Исправляем верстку заголовка результатов */
         .results-header {
             display: flex !important;
             justify-content: space-between !important;
@@ -1253,7 +1245,6 @@ window.saveRecipe = function(recipeId) {
         const icon = btn.querySelector('i');
         if (icon) {
             icon.className = 'fas fa-heart';
-            // Сохраняем текст кнопки
             const buttonText = btn.textContent.trim();
             btn.innerHTML = `<i class="fas fa-heart"></i> ${buttonText}`;
             btn.style.backgroundColor = 'var(--accent-green)';
@@ -1261,5 +1252,6 @@ window.saveRecipe = function(recipeId) {
         }
     }
 };
+
 
 });

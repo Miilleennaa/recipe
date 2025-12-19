@@ -473,11 +473,22 @@ if (passesFilters && cookingTime) {
             passesFilters = false;
         }
         
-        // 6. Фильтр по диете (только для расширенного поиска)
-        if (passesFilters && activeTab === 'advanced' && diet && recipe.diet !== diet) {
-            debugInfo.failedReason = `Диета ${recipe.diet} !== ${diet}`;
+        // 6. Фильтр по диете (только для расширенный поиск)
+if (passesFilters && activeTab === 'advanced' && diet) {
+    if (diet === 'healthy') {
+        const isHealthy = recipe.diet === 'vegetarian' || 
+                         recipe.diet === 'vegan' || 
+                         recipe.calories < 400;
+        if (!isHealthy) {
+            debugInfo.failedReason = `Не является здоровым рецептом`;
             passesFilters = false;
         }
+    } else if (recipe.diet !== diet) {
+        // Для других значений диеты сравниваем напрямую
+        debugInfo.failedReason = `Диета ${recipe.diet} !== ${diet}`;
+        passesFilters = false;
+    }
+}
         
         // 7. Фильтр по калориям (только для расширенного поиска)
         if (passesFilters && activeTab === 'advanced' && maxCalories && recipe.calories > parseInt(maxCalories)) {
@@ -795,58 +806,85 @@ if (passesFilters && cookingTime) {
         });
     }
     
-    // Быстрые фильтры 
-    const quickFilterItems = document.querySelectorAll('.quick-filter-item');
-    
-    if (quickFilterItems && quickFilterItems.length > 0) {
-        quickFilterItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const filterType = item.getAttribute('data-filter');
-                
-                resetAllFilters();
-                
-                switch(filterType) {
-                    case 'quick':
+   // Быстрые фильтры 
+const quickFilterItems = document.querySelectorAll('.quick-filter-item');
+
+if (quickFilterItems && quickFilterItems.length > 0) {
+    quickFilterItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const filterType = item.getAttribute('data-filter');
+            
+            resetAllFilters();
+            
+            let targetTab = 'basic'; 
+            
+            switch(filterType) {
+                case 'quick':
+                    document.querySelector('[data-tab="basic"]').click();
+                    setTimeout(() => {
                         document.getElementById('cooking-time').value = '30';
-                        break;
-                    case 'easy':
+                        filterRecipes();
+                    }, 100);
+                    break;
+                    
+                case 'easy':
+                    document.querySelector('[data-tab="basic"]').click();
+                    setTimeout(() => {
                         document.getElementById('difficulty').value = 'easy';
-                        break;
-                    case 'healthy':
-                        document.getElementById('diet').value = 'vegetarian';
+                        filterRecipes();
+                    }, 100);
+                    break;
+                    
+                case 'healthy':
+                    document.querySelector('[data-tab="advanced"]').click();
+                    setTimeout(() => {
+                        // Здоровое питание: вегетарианские и веганские рецепты до 400 ккал
+                        document.getElementById('diet').value = ''; 
                         document.getElementById('calories').value = '400';
                         if (caloriesValue) caloriesValue.textContent = '400 ккал';
-                        break;
-                    case 'budget':
-                        selectedIngredientList.push('картофель', 'лук', 'морковь', 'яйца');
+                        
+                        filterRecipes();
+                    }, 100);
+                    break;
+                    
+                case 'budget':
+                    document.querySelector('[data-tab="ingredients"]').click();
+                    setTimeout(() => {
+                        selectedIngredientList.push('картофель', 'лук', 'морковь', 'яйца', 'мука');
                         updateSelectedIngredientsDisplay();
-                        break;
-                    case 'family':
+                        filterRecipes();
+                    }, 100);
+                    break;
+                    
+                case 'family'
+                    document.querySelector('[data-tab="basic"]').click();
+                    setTimeout(() => {
                         document.getElementById('dish-type').value = 'main';
                         document.getElementById('cooking-time').value = '60';
-                        break;
-                }
-                
-                // Визуальная обратная связь
-                quickFilterItems.forEach(i => i.style.opacity = '0.7');
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(-5px)';
-                item.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.2)';
-                
+                        document.getElementById('difficulty').value = ''; 
+                        filterRecipes();
+                    }, 100);
+                    break;
+            }
+            
+            // Визуальная обратная связь
+            quickFilterItems.forEach(i => i.style.opacity = '0.7');
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(-5px)';
+            item.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.2)';
+            
+            // Прокрутка к результатам
+            const resultsSection = document.getElementById('search-results');
+            if (resultsSection) {
                 setTimeout(() => {
-                    filterRecipes();
-                    
-                    // Прокрутка к результатам
-                    const resultsSection = document.getElementById('search-results');
-                    if (resultsSection) {
-                        resultsSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                    
-                    showNotification(`Применен фильтр: ${getFilterText(filterType)}`, 'info');
-                }, 300);
-            });
+                    resultsSection.scrollIntoView({ behavior: 'smooth' });
+                }, 200);
+            }
+            
+            showNotification(`Применен фильтр: ${getFilterText(filterType)}`, 'info');
         });
-    }
+    });
+}
     
     // Функция для получения текста фильтра
     function getFilterText(filterType) {
@@ -1255,3 +1293,4 @@ window.saveRecipe = function(recipeId) {
 
 
 });
+

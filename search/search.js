@@ -473,21 +473,10 @@ if (passesFilters && cookingTime) {
             passesFilters = false;
         }
         
-        // 6. Фильтр по диете (только для расширенный поиск)
-if (passesFilters && activeTab === 'advanced' && diet) {
-    if (diet === 'healthy') {
-        const isHealthy = recipe.diet === 'vegetarian' || 
-                         recipe.diet === 'vegan' || 
-                         recipe.calories < 400;
-        if (!isHealthy) {
-            debugInfo.failedReason = `Не является здоровым рецептом`;
-            passesFilters = false;
-        }
-    } else if (recipe.diet !== diet) {
-        // Для других значений диеты сравниваем напрямую
-        debugInfo.failedReason = `Диета ${recipe.diet} !== ${diet}`;
-        passesFilters = false;
-    }
+        // 6. Фильтр по диете (только для расширенного поиска)
+if (passesFilters && activeTab === 'advanced' && diet && recipe.diet !== diet) {
+    debugInfo.failedReason = `Диета ${recipe.diet} !== ${diet}`;
+    passesFilters = false;
 }
         
         // 7. Фильтр по калориям (только для расширенного поиска)
@@ -814,12 +803,16 @@ if (quickFilterItems && quickFilterItems.length > 0) {
         item.addEventListener('click', () => {
             const filterType = item.getAttribute('data-filter');
             
+            // Сначала сбросим все фильтры
             resetAllFilters();
             
-            let targetTab = 'basic'; 
+            // Определим, какую вкладку открыть
+            let targetTab = 'basic';
             
+            // Применяем фильтры в зависимости от типа
             switch(filterType) {
                 case 'quick':
+                    // Быстрые рецепты (до 30 минут)
                     document.querySelector('[data-tab="basic"]').click();
                     setTimeout(() => {
                         document.getElementById('cooking-time').value = '30';
@@ -828,6 +821,7 @@ if (quickFilterItems && quickFilterItems.length > 0) {
                     break;
                     
                 case 'easy':
+                    // Легкие рецепты для начинающих
                     document.querySelector('[data-tab="basic"]').click();
                     setTimeout(() => {
                         document.getElementById('difficulty').value = 'easy';
@@ -836,39 +830,51 @@ if (quickFilterItems && quickFilterItems.length > 0) {
                     break;
                     
                 case 'healthy':
+                    // Здоровые рецепты (до 400 ккал)
                     document.querySelector('[data-tab="advanced"]').click();
                     setTimeout(() => {
-                        // Здоровое питание: вегетарианские и веганские рецепты до 400 ккал
-                        document.getElementById('diet').value = ''; 
                         document.getElementById('calories').value = '400';
-                        if (caloriesValue) caloriesValue.textContent = '400 ккал';
-                        
+                        if (caloriesValue) {
+                            caloriesValue.textContent = '400 ккал';
+                            caloriesSlider.value = '400';
+                        }
                         filterRecipes();
                     }, 100);
                     break;
                     
                 case 'budget':
+                    // Бюджетные рецепты
                     document.querySelector('[data-tab="ingredients"]').click();
                     setTimeout(() => {
-                        selectedIngredientList.push('картофель', 'лук', 'морковь', 'яйца', 'мука');
+                        // Добавляем бюджетные ингредиенты
+                        const budgetIngredients = ['картофель', 'лук', 'морковь', 'яйца', 'мука'];
+                        selectedIngredientList = [...budgetIngredients];
                         updateSelectedIngredientsDisplay();
                         filterRecipes();
                     }, 100);
                     break;
                     
-                case 'family'
+                case 'family':
+                    // Рецепты для всей семьи (основные блюда до 60 минут)
                     document.querySelector('[data-tab="basic"]').click();
                     setTimeout(() => {
-                        document.getElementById('dish-type').value = 'main';
+                        document.getElementById('dish-type').value = 'dinner'; // Исправлено с 'main' на 'dinner'
                         document.getElementById('cooking-time').value = '60';
-                        document.getElementById('difficulty').value = ''; 
                         filterRecipes();
                     }, 100);
                     break;
+                    
+                default:
+                    console.log('Неизвестный тип фильтра:', filterType);
             }
             
-            // Визуальная обратная связь
-            quickFilterItems.forEach(i => i.style.opacity = '0.7');
+            // Визуальная обратная связь для выбранного фильтра
+            quickFilterItems.forEach(i => {
+                i.style.opacity = '0.7';
+                i.style.transform = 'none';
+                i.style.boxShadow = 'none';
+            });
+            
             item.style.opacity = '1';
             item.style.transform = 'translateY(-5px)';
             item.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.2)';
@@ -881,6 +887,7 @@ if (quickFilterItems && quickFilterItems.length > 0) {
                 }, 200);
             }
             
+            // Уведомление о применении фильтра
             showNotification(`Применен фильтр: ${getFilterText(filterType)}`, 'info');
         });
     });
@@ -1293,4 +1300,5 @@ window.saveRecipe = function(recipeId) {
 
 
 });
+
 

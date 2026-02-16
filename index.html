@@ -234,127 +234,46 @@
 </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.2/js.cookie.min.js"></script>
 <script>
+// Элементы уведомления
+var messageElement = document.querySelector('.cookie-notification');
 
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
-
-hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-});
-
-document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-}));
-
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-
-            if (entry.target.classList.contains('feature-card')) {
-                setTimeout(() => {
-                    entry.target.classList.add('glow');
-                }, 300);
-            }
-            
-            if (entry.target.id === 'features') {
-                entry.target.classList.add('in-view');
-            }
-            
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.section-title, .feature-card, .audience-card, .footer-links li, .copyright, #features');
-    
-    animatedElements.forEach(el => {
-        observer.observe(el);
-    });
-});
-
-const featuresSection = document.getElementById('features');
-const featureCards = document.querySelectorAll('.feature-card');
-
-if (featuresSection) {
-    featuresSection.addEventListener('mouseenter', () => {
-        featureCards.forEach(card => {
-            card.style.transform = 'translateY(-5px)';
-        });
-    });
-
-    featuresSection.addEventListener('mouseleave', () => {
-        featureCards.forEach(card => {
-            if (!card.matches(':hover')) {
-                card.style.transform = 'translateY(0)';
-            }
-        });
-    });
+// Проверка cookie при загрузке
+if (!Cookies.get('agreement')) {
+    showMessage();
 }
 
-const cookieNotification = document.getElementById('cookieNotification');
-const cookieYesBtn = document.getElementById('cookieYes');
-
-function addClass(element, className) {
-    if (!element) return;
-    var re = new RegExp("(^|\\s)" + className + "(\\s|$)", "g");
-    if (re.test(element.className)) return;
-    element.className = (element.className + " " + className).replace(/\s+/g, " ").replace(/(^ | $)/g, "");
+// Функции для работы с классами
+function addClass(o, c) {
+    var re = new RegExp("(^|\\s)" + c + "(\\s|$)", "g");
+    if (!o || re.test(o.className)) return;
+    o.className = (o.className + " " + c).replace(/\s+/g, " ").replace(/(^ | $)/g, "");
 }
 
-function removeClass(element, className) {
-    if (!element) return;
-    var re = new RegExp('(^|\\s)' + className + '(\\s|$)', 'g');
-    element.className = element.className.replace(re, '$1').replace(/\s+/g, ' ').replace(/(^ | $)/g, '');
+function removeClass(o, c) {
+    var re = new RegExp('(^|\\s)' + c + '(\\s|$)', 'g');
+    if (!o) return;
+    o.className = o.className.replace(re, '$1').replace(/\s+/g, ' ').replace(/(^ | $)/g, '');
 }
 
+// Показать/скрыть уведомление
 function hideMessage() {
-    addClass(cookieNotification, 'cookie-notification_hidden_yes');
+    addClass(messageElement, 'cookie-notification_hidden_yes');
 }
 
 function showMessage() {
-    removeClass(cookieNotification, 'cookie-notification_hidden_yes');
+    removeClass(messageElement, 'cookie-notification_hidden_yes');
 }
 
+// Сохранить согласие
 function saveAnswer() {
     hideMessage();
     Cookies.set('agreement', '1', { expires: 365 });
 }
 
-function initCounter() {
+// Обработчик кнопки
+document.querySelector('#yes').addEventListener('click', function() {
     saveAnswer();
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    if (!Cookies.get('agreement')) {
-        showMessage();
-    } else {
-        hideMessage();
-    }
 });
-if (cookieYesBtn) {
-    cookieYesBtn.addEventListener('click', function() {
-        initCounter();
-    });
-}
 </script>
 <script src="index/index.js"></script>
 </body>

@@ -18,6 +18,108 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/106858080" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+    <style>
+    /* Стили для уведомления о cookie */
+    .cookie-notification {
+        position: fixed;
+        background-color: rgba(0, 80, 0, 0.95);
+        bottom: 0;
+        width: 100%;
+        color: #e8f5e8;
+        padding: 20px;
+        z-index: 2000;
+        border-top: 3px solid #4caf50;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+    }
+    
+    .cookie-notification_hidden_yes {
+        display: none;
+    }
+    
+    .cookie-notification__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .cookie-notification__content {
+        flex: 1 1 70%;
+        min-width: 280px;
+    }
+    
+    .cookie-notification__header {
+        margin-bottom: 8px;
+        font-size: 20px;
+        color: #a5d6a5;
+        font-weight: bold;
+    }
+    
+    .cookie-notification__body {
+        line-height: 1.5;
+        font-size: 14px;
+    }
+    
+    .cookie-notification__body p {
+        margin-bottom: 8px;
+    }
+    
+    .cookie-notification__body a {
+        color: #b9f6b9;
+        text-decoration: underline;
+        transition: color 0.3s;
+    }
+    
+    .cookie-notification__body a:hover {
+        color: #ffffff;
+    }
+    
+    .cookie-notification__buttons {
+        flex: 0 0 auto;
+        margin-left: 20px;
+    }
+    
+    .cookie-notification__button {
+        background-color: #2e7d32;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        transition: all 0.3s;
+        white-space: nowrap;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .cookie-notification__button:hover {
+        background-color: #1b5e20;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    @media (max-width: 768px) {
+        .cookie-notification__container {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .cookie-notification__buttons {
+            margin-left: 0;
+            margin-top: 15px;
+        }
+        
+        .cookie-notification__button {
+            width: 100%;
+            padding: 12px 20px;
+        }
+    }
+</style>
 </head>
 <body>
 <!-- Навигация -->
@@ -40,6 +142,23 @@
     </div>
 </div>
 </nav>
+
+    <!-- Уведомление о сборе статистики -->
+<div class="cookie-notification cookie-notification_hidden_yes" id="cookieNotification">
+    <div class="cookie-notification__container">
+        <div class="cookie-notification__content">
+            <div class="cookie-notification__header">Предупреждение о сборе статистики</div>
+            <div class="cookie-notification__body">
+                <p>Этот сайт собирает статистику посещения и данные посетителей.</p>
+                <p>Яндекс не имеет доступа к содержанию данных. Продолжая использование, вы соглашаетесь с обработкой информации.</p>
+                <p>Продолжая использование сайта, вы соглашаетесь на обработку информации в соответствии с <a href="#">Пользовательским соглашением</a> и <a href="#">Политикой конфиденциальности</a>.</p>
+            </div>
+        </div>
+        <div class="cookie-notification__buttons">
+            <button class="cookie-notification__button" id="cookieYes">Я согласен</button>
+        </div>
+    </div>
+</div>
 
 <!-- Главный контент -->
 <main class="main-content">
@@ -113,6 +232,130 @@
         <p class="copyright">© 2025 Подбор рецепта. Все права защищены.</p>
     </div>
 </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.2/js.cookie.min.js"></script>
+<script>
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+});
+
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}));
+
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+
+            if (entry.target.classList.contains('feature-card')) {
+                setTimeout(() => {
+                    entry.target.classList.add('glow');
+                }, 300);
+            }
+            
+            if (entry.target.id === 'features') {
+                entry.target.classList.add('in-view');
+            }
+            
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.section-title, .feature-card, .audience-card, .footer-links li, .copyright, #features');
+    
+    animatedElements.forEach(el => {
+        observer.observe(el);
+    });
+});
+
+const featuresSection = document.getElementById('features');
+const featureCards = document.querySelectorAll('.feature-card');
+
+if (featuresSection) {
+    featuresSection.addEventListener('mouseenter', () => {
+        featureCards.forEach(card => {
+            card.style.transform = 'translateY(-5px)';
+        });
+    });
+
+    featuresSection.addEventListener('mouseleave', () => {
+        featureCards.forEach(card => {
+            if (!card.matches(':hover')) {
+                card.style.transform = 'translateY(0)';
+            }
+        });
+    });
+}
+
+const cookieNotification = document.getElementById('cookieNotification');
+const cookieYesBtn = document.getElementById('cookieYes');
+
+function addClass(element, className) {
+    if (!element) return;
+    var re = new RegExp("(^|\\s)" + className + "(\\s|$)", "g");
+    if (re.test(element.className)) return;
+    element.className = (element.className + " " + className).replace(/\s+/g, " ").replace(/(^ | $)/g, "");
+}
+
+function removeClass(element, className) {
+    if (!element) return;
+    var re = new RegExp('(^|\\s)' + className + '(\\s|$)', 'g');
+    element.className = element.className.replace(re, '$1').replace(/\s+/g, ' ').replace(/(^ | $)/g, '');
+}
+
+function hideMessage() {
+    addClass(cookieNotification, 'cookie-notification_hidden_yes');
+}
+
+function showMessage() {
+    removeClass(cookieNotification, 'cookie-notification_hidden_yes');
+}
+
+function saveAnswer() {
+    hideMessage();
+    Cookies.set('agreement', '1', { expires: 365 });
+}
+
+function initCounter() {
+    saveAnswer();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (!Cookies.get('agreement')) {
+        showMessage();
+    } else {
+        hideMessage();
+    }
+});
+if (cookieYesBtn) {
+    cookieYesBtn.addEventListener('click', function() {
+        initCounter();
+    });
+}
+</script>
 <script src="index/index.js"></script>
 </body>
 

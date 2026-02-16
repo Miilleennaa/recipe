@@ -20,105 +20,80 @@
 <!-- /Yandex.Metrika counter -->
     <style>
     /* Стили для уведомления о cookie */
+.cookie-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    max-width: 320px;
+    background: var(--dark-green, #1a3c34);
+    color: var(--text-light, #e8f4f0);
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--medium-green, #2d5a4a);
+    z-index: 2000;
+    backdrop-filter: blur(10px);
+    border-left: 4px solid var(--accent-green, #4daa57);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.cookie-notification_hidden_yes {
+    display: none;
+}
+
+.cookie-notification__header {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--accent-green, #4daa57);
+}
+
+.cookie-notification__body {
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.cookie-notification__body a {
+    color: var(--glow-green, #5dff6c);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent-green, #4daa57);
+}
+
+.cookie-notification__body a:hover {
+    color: var(--text-light, #e8f4f0);
+}
+
+.cookie-notification__buttons {
+    text-align: right;
+}
+
+.cookie-notification__button {
+    background: var(--medium-green, #2d5a4a);
+    color: var(--text-light, #e8f4f0);
+    border: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid var(--accent-green, #4daa57);
+}
+
+.cookie-notification__button:hover {
+    background: var(--light-green, #3e7a60);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(77, 170, 87, 0.3);
+}
+
+@media (max-width: 768px) {
     .cookie-notification {
-        position: fixed;
-        background-color: rgba(0, 80, 0, 0.95);
-        bottom: 0;
-        width: 100%;
-        color: #e8f5e8;
-        padding: 20px;
-        z-index: 2000;
-        border-top: 3px solid #4caf50;
-        backdrop-filter: blur(5px);
-        box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
-        transition: transform 0.3s ease;
+        bottom: 15px;
+        right: 15px;
+        left: 15px;
+        max-width: none;
     }
-    
-    .cookie-notification_hidden_yes {
-        display: none;
-    }
-    
-    .cookie-notification__container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-    }
-    
-    .cookie-notification__content {
-        flex: 1 1 70%;
-        min-width: 280px;
-    }
-    
-    .cookie-notification__header {
-        margin-bottom: 8px;
-        font-size: 20px;
-        color: #a5d6a5;
-        font-weight: bold;
-    }
-    
-    .cookie-notification__body {
-        line-height: 1.5;
-        font-size: 14px;
-    }
-    
-    .cookie-notification__body p {
-        margin-bottom: 8px;
-    }
-    
-    .cookie-notification__body a {
-        color: #b9f6b9;
-        text-decoration: underline;
-        transition: color 0.3s;
-    }
-    
-    .cookie-notification__body a:hover {
-        color: #ffffff;
-    }
-    
-    .cookie-notification__buttons {
-        flex: 0 0 auto;
-        margin-left: 20px;
-    }
-    
-    .cookie-notification__button {
-        background-color: #2e7d32;
-        color: white;
-        border: none;
-        padding: 12px 30px;
-        border-radius: 30px;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: bold;
-        transition: all 0.3s;
-        white-space: nowrap;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    .cookie-notification__button:hover {
-        background-color: #1b5e20;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-    
-    @media (max-width: 768px) {
-        .cookie-notification__container {
-            flex-direction: column;
-            text-align: center;
-        }
-        
-        .cookie-notification__buttons {
-            margin-left: 0;
-            margin-top: 15px;
-        }
-        
-        .cookie-notification__button {
-            width: 100%;
-            padding: 12px 20px;
-        }
-    }
+}
 </style>
 </head>
 <body>
@@ -144,19 +119,14 @@
 </nav>
 
     <!-- Уведомление о сборе статистики -->
-<div class="cookie-notification cookie-notification_hidden_yes" id="cookieNotification">
-    <div class="cookie-notification__container">
-        <div class="cookie-notification__content">
-            <div class="cookie-notification__header">Предупреждение о сборе статистики</div>
-            <div class="cookie-notification__body">
-                <p>Этот сайт собирает статистику посещения и данные посетителей.</p>
-                <p>Яндекс не имеет доступа к содержанию данных. Продолжая использование, вы соглашаетесь с обработкой информации.</p>
-                <p>Продолжая использование сайта, вы соглашаетесь на обработку информации в соответствии с <a href="#">Пользовательским соглашением</a> и <a href="#">Политикой конфиденциальности</a>.</p>
-            </div>
-        </div>
-        <div class="cookie-notification__buttons">
-            <button class="cookie-notification__button" id="cookieYes">Я согласен</button>
-        </div>
+<div class="cookie-notification cookie-notification_hidden_yes">
+    <div class="cookie-notification__header">Сбор статистики</div>
+    <div class="cookie-notification__body">
+        Сайт собирает статистику посещений. Яндекс не имеет доступа к содержанию данных. 
+        Продолжая использование, вы соглашаетесь с <a href="#">обработкой информации</a>.
+    </div>
+    <div class="cookie-notification__buttons">
+        <button class="cookie-notification__button" id="yes">Я согласен</button>
     </div>
 </div>
 
@@ -234,15 +204,12 @@
 </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.2/js.cookie.min.js"></script>
 <script>
-// Элементы уведомления
 var messageElement = document.querySelector('.cookie-notification');
 
-// Проверка cookie при загрузке
 if (!Cookies.get('agreement')) {
     showMessage();
 }
 
-// Функции для работы с классами
 function addClass(o, c) {
     var re = new RegExp("(^|\\s)" + c + "(\\s|$)", "g");
     if (!o || re.test(o.className)) return;
@@ -255,7 +222,6 @@ function removeClass(o, c) {
     o.className = o.className.replace(re, '$1').replace(/\s+/g, ' ').replace(/(^ | $)/g, '');
 }
 
-// Показать/скрыть уведомление
 function hideMessage() {
     addClass(messageElement, 'cookie-notification_hidden_yes');
 }
@@ -264,15 +230,9 @@ function showMessage() {
     removeClass(messageElement, 'cookie-notification_hidden_yes');
 }
 
-// Сохранить согласие
-function saveAnswer() {
+document.querySelector('#yes').addEventListener('click', function() {
     hideMessage();
     Cookies.set('agreement', '1', { expires: 365 });
-}
-
-// Обработчик кнопки
-document.querySelector('#yes').addEventListener('click', function() {
-    saveAnswer();
 });
 </script>
 <script src="index/index.js"></script>
